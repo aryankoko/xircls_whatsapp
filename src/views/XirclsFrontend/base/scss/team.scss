@@ -1,0 +1,105 @@
+.xircls_front_base{
+    .desc-info p{
+        line-height: 1.8;
+    }
+
+    .social-icon{
+        margin-right: 13px;
+    }
+
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+     }
+
+    h6{
+        font-size: 16px !important;
+    }
+
+    .colorb{
+        color: #2e82cb !important;
+    }
+
+    h6 > span{
+        color: #464646 !important;
+        font-weight: bold;
+    }
+
+    .img-center{
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-header{
+        position: relative;
+        display: inline-block;
+    }
+
+    .team-header::after{
+        content: "";
+        width: 10%;
+        background-color: #464646;
+        height: 2px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .modal .modal-content{
+        background-color: #fff;
+    }
+
+    .modal .modal-content .modal-header{
+        background-color: #fff;
+    }
+
+    .col-padding{
+        padding: 4rem !important;
+    }
+
+    .text-height{
+        line-height: 1.8;
+    }
+
+    .liner-parent{
+        position: relative;
+    }
+
+    .liner::after{
+        content: "";
+        width: 40px;
+        height: 2px;
+        background-color: #464646;
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(-50%);
+        left: 0%;
+    }
+
+    .team-image img, .team-image>img{
+        width: 306px;
+        height: 374px;
+    }
+
+    @media (max-width: 767.98px) {
+        h6{
+            font-size: 14px !important;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .col-padding{
+            padding: 2rem !important;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .col-padding{
+            padding: 1rem !important;
+        }
+    }
+}

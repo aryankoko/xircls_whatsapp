@@ -1,0 +1,11 @@
+.profile_nav.active {
+	color: #fff !important;
+    background-color: #7367f0;
+    box-shadow: 0 4px 18px -4px rgba(115, 103, 240, 0.65);
+}
+
+.profile_nav{
+    padding: 0.786rem 1.5rem;
+    border-radius: 0.358rem;
+    color: #625f6e;
+}

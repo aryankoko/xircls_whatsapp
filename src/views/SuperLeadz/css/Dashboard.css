@@ -1,0 +1,82 @@
+.SmallTxt{
+    /* color: #4233ea; */
+    color: #949494;
+    font-size: 12px;
+}
+
+.boxPad{
+    padding-left: 8px;
+}
+.boxPadbtn{
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+@media (max-width: 319px){
+    .WidthAdjust{
+        width: auto !important;
+        font-size: 10px !important;
+        text-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.btnCustom{
+    padding: 6px 6px;
+    background-color: #7364f0;
+    color: #fff;
+    transition: box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+/* .btnCustom:hover{
+    background-color: #5f50ec;
+    color: #fff !important;
+    box-shadow: 0px 0px 8px 0px #5f50ec;
+} */
+
+/* .btnCustom:active{
+    background-color: #7364f0;
+    color: #fff;
+} */
+
+.aa{
+    border: 0.5px solid rgb(220, 220, 220);
+}
+
+.bb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+@media (max-width: 761px) {
+    .WidthAdjust{
+        margin-left: 20px;
+    }
+
+    .cc{
+        margin-left: 20px;
+    }
+}
+
+.boxs {
+    position: relative;
+}
+
+.boxs:not(:last-child)::after {
+    content: '';
+    background-image: url('../assets/greater-than.png');
+    background-size: 20px 20px; /* Adjust the width and height as needed */
+    background-color: rgb(255, 255, 255);
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    position: absolute;
+    top: 50%;
+    right: -19px; /* Adjust this value to align the arrow with the right-side border */
+    transform: translateY(-50%);
+    z-index: 1000;
+    font-size: x-large;
+}

@@ -1,0 +1,51 @@
+.no_text .apexcharts-text{
+    display: none !important;
+}
+
+.no_text .apexcharts-legend{
+    display: none !important;
+}
+
+.apexcharts-yaxis{
+    display: none !important;
+}
+
+.mr-2, .mx-2 {
+	margin-right: 1.5rem !important;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logoIssued {
+    background-color: rgba(232, 230, 252, 255);
+    color: rgba(116, 105, 239, 255);
+}
+
+.logoReferrals {
+    background-color: rgba(220, 246, 232, 255);
+    color: rgba(44, 200, 113, 255);
+}
+
+.logoRedeemed {
+    background-color: rgba(255, 239, 225, 255);
+    color: rgba(255, 182, 114, 255);
+}
+
+.logoCredit {
+    background-color: rgba(214, 247, 251, 255);
+    color: rgba(111, 228, 242, 255);
+}
+
+.logoSample {
+    background-color: rgba(251, 227, 228, 255);
+    color: rgba(236, 107, 108, 255);
+}
+
+.feedToggle {
+    /* color: rgba(116, 105, 239, 255); */
+    border-bottom: 2px solid rgba(116, 105, 239, 255)
+}

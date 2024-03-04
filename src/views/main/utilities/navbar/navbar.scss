@@ -1,0 +1,309 @@
+// media queries generator ----------------------------------------------------------------------------
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1440px
+);
+
+// Generate media queries using a mixin
+@mixin media-query($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+
+    @else {
+        @error "Invalid breakpoint: #{$breakpoint}. Make sure it is defined in $breakpoints map.";
+    }
+}
+
+.customeHomeDiv {
+
+
+    .homeNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        // position: fixed;
+        top: 0;
+        // width: 100%;
+        z-index: 999;
+        // margin-bottom: 130px;
+    }
+
+    .cust-font {
+        font-size: 17px !important;
+        padding: 11px 20px !important;
+    }
+
+    .form-control {
+        font-size: 17px !important;
+        padding: 0.4rem 1rem !important;
+    }
+
+    .nav_logo_img {
+        width: 180px;
+        @include media-query(md)
+        {
+        width: 120px;
+
+        }
+    }
+
+    .nav-list-logo {
+        min-width: 50px;
+        min-height: 50px;
+        background: #F0F0F0;
+
+        @include media-query(md) {
+            min-width: 40px;
+            min-height: 40px;
+        }
+    }
+
+
+    .subtitle {
+        @include media-query(md) {
+            margin: 0px;
+
+        }
+
+    }
+
+    .subdesc {
+        margin: 0px;
+    }
+
+    .menuBtn {
+        display: none;
+    }
+
+    .toggleMenu {
+        width: 1000px;
+        margin-left: 00px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .toggleMenu>ul {
+        margin-left: 0px;
+        margin-bottom: 0 !important;
+    }
+
+    .toggleMenu>ul li {
+        cursor: pointer;
+    }
+
+    .aboutLi,
+    .productLi {
+        position: relative;
+    }
+
+    .aboutLi>p,
+    .productLi>p {
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .subMenu {
+        position: absolute;
+        width: 450px;
+        margin-left: -30px;
+        background-color: rgb(255, 255, 255);
+        z-index: 10;
+        transition: 0.8s ease-in-out;
+
+
+        .hoverItems {
+            &:hover {
+                background: #f2f2f2 !important;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .aboutSubMenuDown,
+    .productSubMenuDown {
+        display: block;
+    }
+
+    .ItemsList {
+        // background: #000 !important;
+        // transition: 1s all;
+
+        &:hover {
+            .ItemsList-cont {
+                display: block;
+                // max-height: 500px;
+
+            }
+        }
+
+        &:focus {
+            .ItemsList-cont {
+                display: block;
+                background: #000 !important;
+            }
+        }
+    }
+
+    .ItemsList-cont {
+        display: none;
+        // max-height: 0px;
+        // overflow: hidden;
+    }
+
+    .aboutSubMenuUp,
+    .productSubMenuUp {
+        display: none;
+    }
+
+    .subMenu {
+        @include media-query(md) {
+            // border-bottom: 1px solid rgba(61, 61, 61, 0.3) !important;
+
+        }
+    }
+
+    .subMenu li {
+        border-bottom: 1px solid rgba(61, 61, 61, 0.3);
+
+    }
+
+    .subMenu li:last-child {
+        border-bottom: none;
+    }
+
+
+    .navBtn {
+        margin-left: 0px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+
+    @media screen and (max-width: 1000px) {
+        .homeNav {
+            justify-content: space-between;
+        }
+
+        .menuBtn {
+            display: block;
+            margin: 0 20px;
+        }
+
+        .toggleMenu {
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            display: block;
+            position: absolute;
+            // transition: .5s linear;
+            // transition-delay: .2s;
+            z-index: 10;
+            z-index: 9999;
+            border-bottom: solid 1px #c1c1c1;
+        }
+
+        .toggleMenuDown {
+            top: 75px;
+        }
+
+        .toggleMenuUp {
+            top: -1500px;
+        }
+
+        .toggleMenu ul {
+            margin-left: 0px;
+            display: block !important;
+        }
+
+        .toggleMenu>ul>li {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .subMenu {
+            position: static;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: none !important;
+        }
+
+        .subMenu li {
+            border-bottom: none;
+        }
+
+        .navBtn {
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 50% !important;
+            transform: translateX(-50%);
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .subMenu {
+            width: 350px;
+        }
+
+    }
+
+
+    // sub nav ---------------------------------------------------------------
+    .second_navbar {
+
+        z-index: 899;
+        // transition: all .2s linear;
+
+        li {
+            border-radius: 5px;
+
+            &:hover {
+                background: rgb(243, 243, 243);
+            }
+        }
+
+        .active {
+            background: rgb(243, 243, 243);
+
+        }
+    }
+
+    // css for subNav bar
+    .Container-subNav {
+
+        @media (min-width: 0px) {
+            width: 100%;
+        }
+
+        @media (min-width: 576px) {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            // width: 768px;
+            width: 100%;
+
+        }
+
+        @media (min-width: 992px) {
+            width: 989px;
+        }
+
+        @media (min-width: 1200px) {
+            width: 1198px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 1438px;
+        }
+    }
+}

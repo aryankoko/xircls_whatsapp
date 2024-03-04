@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Caveat:wght@400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Lilita+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=Pacifico&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@font-face {
+    font-family: 'Colaborate';
+    src: url('../../@core/assets/fonts/Colaborate/ColabReg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#preview_section, #preview_section>* {
+    all: unset;
+}
+
+.text-field>* {
+    line-height: 24px !important;
+}
+
+.active-on::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+    border-bottom: 5px solid #464646;
+}
+
+.sketch-picker {
+    width: auto !important;
+    padding: 0px !important;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px !important;
+}
+
+[dir] .ql-bubble .ql-tooltip {
+    background-color: #1d1d1d;
+    border-radius: 5px;
+}
+
+[dir] .css-1rhbuit-multiValue {
+    background-color: #464646 !important;
+}
+
+[dir] .acc-header button {
+    background-color: white !important;
+}
+
+.row>.px-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+#dropZoneParent::-webkit-scrollbar, #dropZoneParent *::-webkit-scrollbar {
+    display: none;
+}
+
+/* .modal-backdrop.fade.show {
+    opacity: 0 !important;
+} */
+
+.gen-text {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
+    transition: 0.3s ease;
+}
+
+.gen-text:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+[dir] .accordion-button::after {
+    background-image: url('../../assets/images/superLeadz/chevron-down.svg') !important;
+}
+
+.revealSection {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.img-array-item:hover .revealSection {
+    opacity: 1;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: auto !important;
+    opacity: 1 !important;
+}
+
+input[type=range] {
+    accent-color: #464646 !important;
+}
+
+.tree-border::after {
+    content: "";
+    position: absolute;
+    inset: 1.185rem auto auto auto;
+    width: 1rem;
+    border-top: 1px solid lightgray;
+}
+
+.tree-border::before {
+    content: "";
+    position: absolute;
+    top: 0.185rem;
+    height: 100%;
+    border-left: 1px solid lightgray;
+}
+
+.tree-border:last-child::before {
+    height: 1rem !important;
+}
+
+#customization-container {
+    font-family: "Montserrat";
+
+}
+
+.active-elem {
+    position: relative;
+    outline: 2px solid #727272;
+}
+
+.swiper-button-next::after, .swiper-rtl .swiper-button-prev::after, .swiper-button-prev::after, .swiper-rtl .swiper-button-next::after {
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    color: #464646;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 500px;
+    padding: 0px;
+    outline: 1px solid #464646
+}
+
+#page-selector {
+    max-width: calc(100vw - 65px - 350px - 240px);
+}
+
+.custom-btn-outline {
+    color: #82868b !important;
+    border: 1px solid #82868b !important;
+    background-color: rgba(59, 89, 152, 0) !important;
+    transition: 0.2s ease;
+}
+
+.custom-btn-outline:hover {
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+[dir] .form-check-dark .form-check-input:checked {
+    border-color: #464646;
+    background-color: #006aff;
+}
+
+.sideNav-items {
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.75rem 0px;
+    aspect-ratio: 1;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+.sideNav-items.active-item {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#dropZoneParent::-webkit-scrollbar, .nav-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+#dropZoneParent p {
+    margin: 0px;
+}
+
+.hide-after-dropdown::after {
+    display: none !important;
+}
+
+.renameTab {
+    top: 0px;
+    left: 0px;
+    transform: translateY(-100%);
+}
+
+.hideOfferSection {
+    display: none;
+}
+
+.activeDrop {
+    background-color: #006aff !important;
+    color: white !important;
+}
+
+#cross_btn_cont:hover>#cross_btn_box {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cross_btn_box_border {
+    outline: solid 1px rgb(0, 0, 0, 0.5);
+    outline-offset: -2px;
+}
+
+.hideScroll::-webkit-scrollbar {
+    display: none !important;
+}
+
+.transformSideBar {
+    transform: translateX(0px)
+}
+
+.sideNav-items:hover>.transformSideBar {
+    transform: translateX(3px)
+}
+
+@media only screen and (max-width: 1280px) {
+    #page-selector {
+        max-width: 340px;
+    }
+}
+
+/* [dir] .show > .dropdown-menu {
+    transform: translate(140px, -90px) !important;
+} */
+.custom_dropMenu {
+    transform: translate(140px, -70px) !important;
+    /* top: ; */
+}

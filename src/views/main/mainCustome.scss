@@ -1,0 +1,390 @@
+// media query
+@mixin mobile {
+    @media (max-width: 512px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: 912px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: 775px) {
+        @content;
+    }
+
+}
+
+@mixin mobile {
+    @media (max-width: 500px) {
+        @content;
+    }
+}
+
+// media queries generator ----------------------------------------------------------------------------
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1440px
+);
+
+// Generate media queries using a mixin
+@mixin media-query($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+
+    @else {
+        @error "Invalid breakpoint: #{$breakpoint}. Make sure it is defined in $breakpoints map.";
+    }
+}
+
+
+
+// fonts
+@font-face {
+    font-family: Colaborate Thi;
+    src: url("../../assets/Colaborate/ColabThi.otf");
+}
+
+@font-face {
+    font-family: Colaborate Med;
+    src: url("../../assets/Colaborate/ColabMed.otf");
+}
+
+@font-face {
+    font-family: Colaborate Lig;
+    src: url("../../assets/Colaborate/ColabLig.otf");
+}
+
+@font-face {
+    font-family: Colaborate Reg;
+    src: url("../../assets/Colaborate/ColabReg.otf");
+}
+
+
+
+// home pages lodaer class
+.customeHomeDiv {
+    max-width: 1440px;
+    margin: auto;
+    @media screen and (max-width: 770px) {
+        max-width: 100%;
+    }
+    // fonts classes ----------------------------------------------------------------------------
+
+    * {
+        font-family: Colaborate Thi !important;
+    }
+
+    .fw-lig {
+        font-family: Colaborate Lig !important;
+    }
+
+    .fw-thi {
+        font-family: Colaborate Thi !important;
+    }
+
+    .fw-med {
+        font-family: Colaborate Med !important;
+    }
+
+    .fw-reg {
+        font-family: Colaborate Reg !important;
+    }
+
+   
+
+    // primary color for headings
+    .main-heading {
+        color: #1a1a1a !important;
+    }
+
+
+    // line height ----------------------------------------------------------------------------
+    .lh-83 {
+        line-height: 83px !important;
+
+        @include tab {
+            line-height: 67px !important;
+        }
+
+        @include mobile {
+            line-height: 40px !important;
+        }
+    }
+
+    .lh-32 {
+        line-height: 32px !important;
+        @include tab {
+            line-height: 25px !important;
+        }
+    }
+
+
+    // buttons for home  ----------------------------------------------------------------------------
+    $primary-blue: #0092ff;
+    $dark-blue: #096ef2;
+    $dark-gray: #1a1a1a;
+    $black: #000;
+    $white: #fff;
+
+    .main-btn {
+
+        &-blue,
+        &-blue-gra,
+        &-blue2,
+        &-dark,
+        &-black,
+        &-light,
+        &-white {
+            cursor: pointer !important;
+            transition: all 0.25s;
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+
+        &-blue-gra {
+            background: transparent linear-gradient(90deg, $dark-blue, $primary-blue) 0 0 !important;
+            border: solid 1px $dark-blue !important;
+            color: $white !important;
+        }
+
+        &-blue,
+        &-blue2 {
+            background: $primary-blue !important;
+            border: solid 1px $primary-blue !important;
+            color: $white !important;
+            font-family: 'Colaborate Reg';
+
+            &-blue {
+                // font-weight: 900 !important;
+            }
+        }
+
+        &-dark {
+            color: $black !important;
+            border: solid 1px $black !important;
+
+            &:hover {
+                color: $white !important;
+                background: $black !important;
+            }
+            &:active{
+                background: $black !important;
+                color: $white !important;
+            }
+        }
+
+        &-black {
+            color: $white !important;
+            border: solid 1px $black !important;
+            background: $black !important;
+
+            &:hover {
+                color: $white !important;
+            }
+
+        }
+
+        &-light {
+            color: $white !important;
+            border: solid 1px $white !important;
+
+            &:hover {
+                color: $dark-gray !important;
+                background: $white !important;
+            }
+          
+        }
+
+        &-white {
+            color: $black !important;
+            border: solid 1px $white !important;
+            background: $white !important;
+
+            &:hover {
+                color: $black !important;
+                border: solid 1px $white !important;
+            }
+        }
+    }
+
+
+
+    // ------------------------------
+
+    a {
+        color: #393939;
+
+        &:hover {
+            color: #0a0a0a;
+        }
+    }
+
+    li {
+        color: #393939;
+    }
+
+    // margins from 60 to 240 px ----------------------------------------------------------------------------
+    @for $i from 6 through 24 {
+        $value: $i * 10;
+
+        .mt#{$value} {
+            margin-top: #{$value}px !important;
+
+            @if $i == 17 or $i ==18  {
+                @include laptop {
+                    margin-top: 80px !important;
+                }
+            }
+            @if $i == 16  {
+                @include laptop {
+                    margin-top: 120px !important;
+                }
+            }
+            @if $i == 24  {
+                @include laptop {
+                    margin-top: 120px !important;
+                }
+            }
+        }
+    }
+
+
+    /* Remove arrows for number input type */
+    input[type="number"] {
+        -webkit-appearance: textfield !important;
+        /* Chrome, Safari, Edge */
+        -moz-appearance: textfield !important;
+        /* Firefox */
+        appearance: textfield !important;
+        /* Other modern browsers */
+    }
+
+    /* Remove default styling for number input arrows in WebKit browsers */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+    }
+
+
+
+    // faq accordian
+
+
+    .theme-black {
+        * {
+            background-color: #000 !important;
+        }
+
+        h1 {
+            color: #ebeaea !important;
+            font-weight: 100;
+        }
+
+        h3 {
+            font-weight: 100;
+            color: #adadad !important;
+        }
+
+        .FAQ {
+            color: #ffffff !important;
+        }
+
+        .accordion-button {
+            &:not(.collapsed) {
+                &::after {
+                    // background-image: url("https://img.icons8.com/material-outlined/24/000000/minus.png");
+                    background-image: url("./components/Faq/img/minus-white.png") !important;
+                    transform: rotate(0deg) !important;
+
+                }
+            }
+
+            &::after {
+                transform: rotate(90deg) !important;
+                content: "" !important;
+                background-repeat: no-repeat !important;
+                background-image: url("./components/Faq/img/plus-white.png") !important;
+
+            }
+        }
+    }
+
+    .theme-white {
+        * {
+            color: #000000 !important;
+            background-color: #ffffff !important;
+        }
+
+        .accordion-button {
+            &:not(.collapsed) {
+                &::after {
+                    background-image: url("https://img.icons8.com/material-outlined/24/minus.png") !important;
+                    transform: rotate(0deg) !important;
+                }
+            }
+
+            &::after {
+                transform: rotate(90deg) !important;
+                content: "" !important;
+                background-image: url("https://img.icons8.com/material-outlined/24/plus-math--v1.png") !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+    }
+
+
+
+
+
+
+    //   anomation
+    .popupTran {
+        animation: fade-in 1s 1;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0.6;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+
+    // from login media query 
+    .login_cont {
+        margin: auto;
+
+        @each $breakpoint, $width in (md: 768px,
+            lg: 992px,
+            xl: 1200px,
+            xxl: 1440px) {
+            @include media-query(#{$breakpoint}) {
+                width: $width;
+            }
+        }
+    }
+
+
+    .css-tlfecz-indicatorContainer {
+        padding: 0;
+        padding-right: 8px;
+    }
+
+}

@@ -1,0 +1,27 @@
+/* button:focus {
+    outline: none !important;
+    background-color: transparent !important;
+    border: none !important;
+} */
+
+.no-border-rate {
+    border: none !important;
+    outline: none !important;
+}
+
+.no-border {
+    min-width: 100px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 5px 10px;
+}
+
+.months {
+    display: flex;
+    justify-content: center;
+}
+
+/* select {
+    margin: 10px;
+} */

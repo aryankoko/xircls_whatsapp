@@ -1,0 +1,30 @@
+.sign_up #row{
+    width: 55% !important;
+}
+
+.sign_up .mb-4{
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    font-family: 'source sans pro',sans-serif;
+    letter-spacing: 1px !important;
+    color: #555 !important;
+    margin-bottom: 10px !important;
+
+}
+.sign_up h3{
+    font-size: 36px !important;
+    font-weight: lighter;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    margin-bottom: 3rem !important;
+
+}
+
+.sign_up a{
+    text-decoration: none !important;
+    color: #2e82cb !important;
+}
+
+.sign_up #h6-here{
+    font-size: 20px !important;
+}

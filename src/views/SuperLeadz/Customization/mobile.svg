@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" aspect-ratio="751/816" style="aspect-ratio: 751/816" viewBox="0 0 751 816" version="1.1">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-38.5%" y="-20.6%" width="176.9%" height="141.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="40" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Launcher" filter="url(#filter-1)" transform="translate(220.000000, 61.000000)">
+            <rect id="Rectangle-9" fill="#F4F6F8" x="0" y="0" width="312" height="583" rx="33"/>
+            <rect id="Rectangle-9" stroke="#F4F6F8" fill="#FFFFFF" x="16.5" y="16.5" width="279" height="549" rx="20"/>
+            <path d="M70,17 L242.524941,17 L242.524941,18.4893112 C242.524941,30.6395757 232.675205,40.4893112 220.524941,40.4893112 L92,40.4893112 C79.8497355,40.4893112 70,30.6395757 70,18.4893112 L70,17 Z" id="Rectangle-10" fill="#F4F6F8"/>
+            <rect id="Rectangle-11" fill="#DFE3E8" x="115" y="22" width="81.807601" height="6.47980998" rx="3.23990499"/>
+        </g>
+    </g>
+</svg>

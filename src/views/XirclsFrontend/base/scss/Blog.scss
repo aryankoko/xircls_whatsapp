@@ -1,0 +1,52 @@
+.blog_page{
+    body{
+        font-size: 19px !important;
+    }
+   p{
+       font-size: 19px !important; 
+   }
+
+
+   body{
+       font-size: 19px !important;
+       font-family: Gibson,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+
+   }
+
+   @media (min-width: 768px) {
+       
+       h1, h2{
+           font-size: 1.685rem !important;
+
+       }
+   }
+
+   p {
+       font-family: Gibson,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+       font-weight: 300;
+       line-height: 2.5rem;
+       color: #1a1a1a;
+       
+       /* font-style: italic; */
+   }
+
+
+
+   h1, h2{
+       font-family: Gibson,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+       font-weight: 300 !important;
+       line-height: 1.625 !important;
+   }
+
+   a{
+       font-family: Gibson,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+
+   }
+
+   body, small, .menu-link, .mega-menu-style-2 .mega-menu-title > .menu-link, .sub-menu-container .menu-item > .menu-link, .wp-caption, .fbox-center.fbox-italic p, .skills li .progress-percent .counter, .nav-tree ul ul a, .font-body, .entry-link span, .entry blockquote p, .more-link, .comment-content .comment-author span, .comment-content .comment-author span a, .button.button-desc span, .testi-content p, .team-title span, .before-heading, .wedding-head .first-name span, .wedding-head .last-name span, .font-secondary {
+       font-family: Gibson,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+   }
+   .more-link{
+       font-size: 19px;
+   }
+}

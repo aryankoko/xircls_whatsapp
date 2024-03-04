@@ -1,0 +1,33 @@
+.layout {
+    opacity: 0.25;
+}
+
+.layout-selector:checked+.layout {
+    opacity: 1;
+}
+
+.button-move {
+    display: flex !important;
+    border-radius: 30px;
+    color: white;
+    padding: 12px;
+    background-color: #34aedd;
+    border: 2px;
+    width: 245px;
+    position: relative;
+}
+
+.switch {
+    --line: #505162;
+    --dot: green;
+    --circle: #9EA0BE;
+    --duration: .3s;
+    --text: #9EA0BE;
+    cursor: pointer;
+}
+
+.main{
+    background: linear-gradient( 160deg, #F1F4FF, #F9FAFF);
+    padding: 10px; 
+    border: 2px solid; 
+}

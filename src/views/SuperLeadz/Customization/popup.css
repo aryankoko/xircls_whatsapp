@@ -1,0 +1,447 @@
+@font-face {
+    font-family: 'Antonio-Bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontAntonioBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Antonio-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontAntonioRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AbrilFatface-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontAbrilFatfaceRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'DroidSans-Bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontDroidSansBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'DroidSans';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontDroidSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lato-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontLatoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'librecaslontext-bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontLibrecaslontextBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'librecaslontext-regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontLibrecaslontextRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NotoSansUI-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontNotoSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontOpenSansBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'OpenSans-Regularegular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontOpenSansRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'PT-sans-Bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontPTSansBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'PT-serif-Bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontPTSerifBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Raleway-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontRalewayRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontUbuntuRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Vollkorn-Bold';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontVollkornBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Vollkorn-Regular';
+    src: url('https://api.xircls.com/static/plugin_fonts/SystemFontVollkornRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('https://api.xircls.com/static/plugin_fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@media (max-width: 550px) {
+    #rel{
+        padding: 20px 25px 45px !important;
+    }
+
+    .xircls_button_link_val{
+        font-size: 14px !important;
+    }
+
+    .yellow-txt{
+        font-size: 17px !important;
+    }
+
+    
+    #xircls_btn_popup.xirclsBL #id_xircls_btn_txt{
+        display: none !important;
+    }
+
+    #xircls_btn_popup.xirclsML #id_xircls_btn_txt{
+        font-size: 13px !important;
+    }
+
+    #xircls_btn_popup.xirclsML #xircls_btn_desktop_img{
+        width: 20px !important;
+    }
+
+    #xircls_btn_popup.xirclsBC #id_xircls_btn_txt{
+        display: none !important;
+    }
+
+    #xircls_btn_popup.xirclsBR #id_xircls_btn_txt{
+        display: none !important;
+    }
+
+    #xircls_btn_popup.xirclsMR #id_xircls_btn_txt{
+        font-size: 13px !important;
+    }
+
+    #xircls_btn_popup.xirclsMR #xircls_btn_desktop_img{
+        width: 20px !important;
+    }
+
+    #xircls_btn_popup.xirclsBL #xircls_display_popup{
+        border-radius: 50% !important;
+        padding: 10px !important;
+    }
+
+    #xircls_btn_popup.xirclsML #xircls_display_popup{
+        border-radius: 0 0 22px 22px !important;
+        padding: 2px 10px 10px 10px !important;
+    }
+
+    #xircls_btn_popup.xirclsBC #xircls_display_popup{
+        border-radius: 50% !important;
+        padding: 10px !important;
+    }
+
+    #xircls_btn_popup.xirclsBR #xircls_display_popup{
+        border-radius: 50% !important;
+        padding: 10px !important;
+    }
+
+    #xircls_btn_popup.xirclsMR #xircls_display_popup{
+        border-radius: 0 0 22px 22px !important;
+        padding: 2px 10px 10px 10px !important
+    }
+
+    .theme2_style{
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+}
+
+
+.xirclsBL{
+    position: fixed;
+    bottom: 0%;
+    z-index: 100001;
+ }
+
+ #XIRCLS_POPUP_THEME input{
+    padding: 0px;
+  }
+
+ .xirclsML{
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    z-index: 100001;
+    transform: rotate(-90deg) translateY(100%);
+    transform-origin: bottom left;
+ }
+
+ .xirclsBC{
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100001;
+ }
+
+ .xirclsBR{
+    position: fixed;
+    bottom: 0%;
+    z-index: 100001;
+    right: 0%;
+}
+
+ .xirclsMR{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100001;
+    right: 0%;
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(50%);
+}
+
+#XIRCLS_POPUP_THEME .xircls_loader {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    width: 21px;
+    height: 21px;
+    animation-name: loading;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: block;
+}
+ 
+ @keyframes loading{
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+ }
+ 
+ @keyframes fading {
+    0%, 100% {
+    opacity: 0.05;
+    }
+    50% {
+    opacity: 0.95;
+    }
+ }
+
+ #XIRCLS_POPUP_THEME h4 {
+    font-family: Montserrat !important;
+    font-weight: 600;
+    line-height: 1.2 !important;
+    font-size: 19px;
+    color: #5e5873 !important;
+    letter-spacing: 1px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 12px !important;
+    text-transform: none;
+    font-style: normal;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(34, 41, 47, 0);
+}
+
+.pri_offer h4{
+    text-align: center;
+    font-size: 17px;
+    font-family: sans-serif !important;
+    font-weight: 600;
+    line-height: 1.2 !important;
+    font-size: 17px;
+    color: #464646 !important;
+    letter-spacing: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 8px !important;
+    text-transform: none;
+    margin: 0px !important;
+
+}
+
+.hide_info p{
+    padding: 0 !important;
+    margin-top: 0;
+    margin-bottom: 17px;
+    font-size: 13px;
+    line-height: 1.7;
+    font-family: 'Montserrat';
+    color: #464646;
+    letter-spacing: 0.5px;
+}
+
+.xircls_preview_body > p {
+    margin: 0% !important;
+    font-size: 13px;
+    font-family: inherit;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #111111 !important;
+}
+
+.sub_xircls_preview_body > p {
+    margin: 0% !important;
+    font-size: 13px;
+    font-family: inherit;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #111111 !important;
+}
+
+.show_info::-webkit-scrollbar, #main__div::-webkit-scrollbar, .offer_section::-webkit-scrollbar, .xircls_categories::-webkit-scrollbar, .dynamic_offers::-webkit-scrollbar {
+    display: none;
+ }
+
+ /* Hide scrollbar for IE, Edge and Firefox */
+ .show_info, #main__div, .offer_section, .xircls_categories, .dynamic_offers {
+ -ms-overflow-style: none;  /* IE and Edge */
+ scrollbar-width: none;  /* Firefox */
+ }
+
+
+#xircls_radio input[type=radio],
+#xircls_radio input[type=checkbox]{
+   /* Hide original#xircls_radio inputs */
+   visibility: hidden !important;
+   position: absolute !important;
+ }
+#xircls_radio input[type=radio] + label:before,
+#xircls_radio input[type=checkbox] + label:before{
+   height:16px !important;
+   width:16px !important;
+   margin-right: 2px !important;
+   content: " ";
+   display:inline-block !important;
+   vertical-align: baseline !important;
+   border:1px solid #000 !important;
+ }
+#xircls_radio input[type=radio]:checked + label:before,
+#xircls_radio input[type=checkbox]:checked + label:before{
+   /* background: #000; */
+   box-shadow: inset 0 0 0 4px #000 !important;
+ }
+ 
+ /* CUSTOM RADIO AND CHECKBOX STYLES */
+#xircls_radio input[type=radio] + label:before{
+   border-radius:50% !important;
+ }
+#xircls_radio input[type=checkbox] + label:before{
+   border-radius:2px !important;
+ }
+
+ #xircls_radio label{
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+    font-family: Montserrat !important;
+    font-weight: normal !important;
+    color: #464646;
+}
+
+
+#lets_collab > * {
+    font-family: sans-serif !important;
+    letter-spacing: 0px;
+    text-transform: none;
+}
+
+#xircls_Cust input{
+    font-size: 13px !important;
+    letter-spacing: 0px !important;
+}
+
+#xircls_Cust label{
+    /* font-size: 13px !important;
+    margin-bottom: 3px !important; */
+    letter-spacing: 0px !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+    font-family: sans-serif !important;
+    font-weight: normal !important;
+}
+
+.dynamic_offers .xircls_main_offer_image > p {
+    font-size: 14px !important;
+    margin: 0 0 15px 0 !important;
+    letter-spacing: 0%;
+    line-height: 1.5;
+}
+
+#infinity_onload_append .xircls_main_offer_image > p {
+    font-size: 14px !important;
+    margin: 0 0 19px 0 !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+    color: #464646 !important;
+}
+
+/* js  */
+#xircls_popup_box1, #XIRCLS_popup_on_load{
+    transition: 0.3s;
+}
+
+#XIRCLS_POPUP_THEME > a {
+    text-decoration: none ;
+}
+
+#infinity_onload_append > p {
+    font-size: 14px !important;
+    margin: 0 0 15px 0 !important;
+    letter-spacing: 0%;
+    line-height: 1.5;
+}

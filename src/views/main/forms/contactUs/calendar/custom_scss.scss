@@ -1,0 +1,110 @@
+.test {
+    /* Import Google font - Poppins */
+    // @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+    .wrapper {
+        width: 400px;
+        background: #fff;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    .wrapper header {
+        display: flex;
+        align-items: center;
+        padding:15px 30px ;
+        justify-content: space-between;
+    }
+
+    header .icons {
+        display: flex;
+    }
+
+    header .icons span {
+        height: 38px;
+        width: 38px;
+        margin: 0 1px;
+        cursor: pointer;
+        color: #878787;
+        text-align: center;
+        line-height: 38px;
+        user-select: none;
+        border-radius: 50%;
+    }
+
+    .icons span:last-child {
+        margin-right: -10px;
+    }
+
+    header .icons span:hover {
+        background: #f2f2f2;
+    }
+
+    header .current-date {
+        font-weight: 500;
+    }
+
+    .calendar {
+        padding:10px 20px;
+    }
+
+    .calendar ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        text-align: center;
+    }
+
+    .calendar .days {
+    }
+
+    .calendar li {
+        color: #333;
+        width: calc(100% / 7);
+    }
+
+    .calendar .weeks li {
+        font-weight: 500;
+        cursor: default;
+    }
+
+    .calendar .days li {
+        z-index: 1;
+        cursor: pointer;
+        position: relative;
+        padding: 10px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin: 2px 5px;
+
+    }
+
+    .days li.inactive {
+        color: #aaa;
+    }
+
+    .days li.active {
+        color: #fff;
+    }
+
+
+
+    .days li.active {
+        background: #b3b3b3;
+
+    }
+
+    .days li:not(.active):not(.selected):hover {
+        background: #f2f2f2;
+        color: black !important;
+
+    }
+
+    li.selected {
+        color: white !important;
+        background: #0090f7ff;
+
+    }
+}

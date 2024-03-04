@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "NoirPro-Regular";
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot");
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff") format("woff"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.svg#NoirPro-Regular") format("svg");
+}
+
+/* .customer-profile * {
+    font-family: 'NoirPro-Regular', Lato;
+} */
+
+.customer-profile .active-nav {
+    color: #7367f0 !important;
+    border-bottom: 3px solid #7367f0;
+    padding-bottom: 0.325rem !important;
+}
+
+.customer-profile .fw-300 {
+    font-weight: 300;
+}
+
+.customer-profile .fw-800 {
+    font-weight: 800;
+}
+
+.customer-profile .fs-small {
+    font-size: 12.5px;
+}
+
+
+.customer-profile .customer-basic-details .p-custom {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem
+}
+
+.customer-profile .customer-basic-details .active {
+    font-weight: 800;
+    background-color: #7367f0 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 25px -8px #7367f0 !important;
+    transition: 0.1s ease;
+}
+
+.customer-profile .customer-basic-details .active:active {
+    background-color: #6d63dd !important;
+    box-shadow: 0 0px 0px 0px #7367f0 !important;
+}
+
+.customer-profile .customer_nav{
+    padding-bottom: 0.5rem;
+}

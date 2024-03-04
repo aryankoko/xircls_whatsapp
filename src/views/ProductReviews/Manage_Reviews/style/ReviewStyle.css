@@ -1,0 +1,124 @@
+.styleDrop {
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+}
+
+.styleDropUp {
+  max-height: 0;
+}
+
+.styleDropDown {
+  max-height: 100%;
+}
+
+.slideOpen {
+  /* visibility: visible; */
+  animation: fade-in 0.5s ease;
+}
+
+.slideClose {
+  /* visibility: hidden; */
+  animation: fade-out left 2s ease;
+  display: none !important;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.paddingY {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.star-rating .fa-star {
+  color: orange;
+}
+
+.HeadReview {
+  color: white;
+  background-color: #7E73F1;
+  height: auto;
+  margin: 0px !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* border-radius: 6px; */
+
+}
+
+/* .HeadReview:hover{
+    color: white;
+    background-color: #646464;
+    border-radius: 8px;
+    transition: ease 0.3s;
+} */
+
+.ReviewPeriod {
+  font-size: 12px !important;
+}
+
+.PermissionFont {
+  font-size: 13px;
+  font-weight: light;
+  opacity: 0.8;
+}
+
+.tgglSize {
+  width: 40px !important;
+  height: 20px !important;
+}
+
+a {
+  user-select: none;
+}
+
+.NoSelect {
+  user-select: none;
+}
+
+.InputSizeSmall {
+  height: 20px;
+  width: 35px;
+}
+
+.Equal-Card {
+  padding-bottom: 50px !important;
+}
+
+/* .nav-link.active {
+  background-color: #7E73F1 !important;
+  color: white !important;
+  border-radius: 4px;
+} */
+
+.CardHeight {
+  height: 140px;
+}
+
+.nonClickableDiv {
+  pointer-events: none;
+  filter: grayscale(1.5);
+  opacity: 0.5;
+}
+
+@media screen and (width: 768px) {
+  .CardHeight {
+    height: auto !important;
+  }
+}

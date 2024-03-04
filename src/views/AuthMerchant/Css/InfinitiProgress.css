@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "NoirPro-Regular";
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot");
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff") format("woff"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.svg#NoirPro-Regular") format("svg");
+}
+
+.infiniti-progress * {
+    font-family: 'NoirPro-Regular', Lato;
+}

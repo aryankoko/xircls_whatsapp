@@ -1,0 +1,739 @@
+.previewSection {
+    all: unset !important;
+}
+
+.xircls_account_parent {
+    font-family: Tw Cen Mt !important;
+    /* padding: 5px; */
+}
+
+.yellow_back {
+    padding: 50px;
+    background-image: url('../assets/banner_back.png');
+    background-size: contain;
+}
+
+.main_font {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.xircls_account_parent a {
+    font-size: 16px !important;
+    font-weight: 400;
+}
+
+.account_active {
+    background: #e2e2e2;
+}
+
+.address_type_select {
+    background-color: black;
+    color: white;
+}
+
+.header_font {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.xircls_account_parent .xircls_inputs {
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #ccc !important;
+    /* padding: 0px 8px; */
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+}
+
+.xircls_account_parent .xircls_label {
+    font-size: 17px;
+}
+
+#xircls_radio input[type="radio"],
+#xircls_radio input[type="checkbox"] {
+    /* Hide original#xircls_radio inputs */
+    visibility: hidden !important;
+    position: absolute !important;
+}
+
+#xircls_radio input[type="radio"]+label:before,
+#xircls_radio input[type="checkbox"]+label:before {
+    height: 16px !important;
+    width: 16px !important;
+    margin-right: 2px !important;
+    content: " ";
+    display: inline-block !important;
+    vertical-align: baseline !important;
+    border: 1px solid #000 !important;
+}
+
+#xircls_radio input[type="radio"]:checked+label:before,
+#xircls_radio input[type="checkbox"]:checked+label:before {
+    /* background: #000; */
+    box-shadow: inset 0 0 0 4px #000 !important;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+#xircls_radio input[type="radio"]+label:before {
+    border-radius: 50% !important;
+}
+
+#xircls_radio input[type="checkbox"]+label:before {
+    border-radius: 2px !important;
+}
+
+#xircls_radio label {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+    font-family: Montserrat !important;
+    font-weight: normal !important;
+    color: #464646;
+}
+
+.xircls_btn_style {
+    padding: 8px 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.xircls_btn_style_secondary {
+    padding: 8px 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+a:not([href]) {
+    cursor: pointer !important;
+}
+
+.whistlist_active {
+    color: red !important;
+}
+
+.payment-details {
+    font-size: 14px;
+}
+
+.xircls_add_box p {
+    margin: 0 !important;
+}
+
+#add-address-btn {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#address-form {
+    display: none;
+}
+
+#address-form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+#address-form input[type="text"],
+#address-form input[type="submit"] {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#address-form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+#address-form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* #button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+  } */
+.primary-btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff !important;
+    background: #000 !important;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.xircls_left_menu {
+    width: 25%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.xircls_middle_menu::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.xircls_middle_menu {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    width: 70%;
+    border-radius: 10px;
+    overflow: auto;
+    height: 86%;
+    margin: 10px;
+}
+
+.xircls_right_section {
+    width: 25%;
+    margin: 10px;
+}
+
+/* carousel css starts*/
+* {
+    box-sizing: border-box;
+}
+
+.slider_parent {
+    display: none;
+}
+
+.slider {
+    width: 95%;
+    margin: 10px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slides {
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /*
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    */
+}
+
+.slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.slides>div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: 170px;
+    margin-right: 20px;
+    border-radius: 10px;
+    /* background: #eee; */
+    border: 2px #eee solid;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 100px; */
+}
+
+.slider>a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+}
+
+.slider>a:active {
+    top: 1px;
+}
+
+.slider>a:focus {
+    background: #000;
+}
+
+/* Don't need button navigation */
+/* @supports (scroll-snap-type) {
+    .slider > a {
+      display: none;
+    }
+  } */
+
+/* carousel css ends */
+
+.banner_font1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.banner_font2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* address section starts */
+.address_type:hover {
+    transition-property: background-color;
+    transition-duration: 700ms;
+    transition-timing-function: ease;
+    transform: translateY(0);
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.address_type_parent {
+    gap: 40px;
+    justify-content: center;
+}
+
+/* address section ends */
+
+/* privacy right content starts */
+.main_box_privacy_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+}
+
+.left_privacy_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 1px #c7c7c7 solid;
+    height: 100%;
+    width: 50%;
+    gap: 30px;
+}
+
+.right_privacy_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+/* privacy right content ends */
+
+/* credit section starts */
+.credit_section_hero {
+    font-size: 26px;
+    background-color: #000;
+    padding: 50px;
+    width: 70%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .credit_page_graph{
+
+    } */
+
+.credit_section_hero_right {
+    width: 30%;
+}
+
+.text1_credit_section {
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.text2_credit_section {
+    font-size: 20px;
+}
+
+.right_card_text1_credit {
+    font-size: 18px;
+}
+
+.right_card_text2_credit {
+    font-size: 25px;
+}
+
+td {
+    padding: 20px;
+}
+
+.table_rest {
+    font-size: 15px;
+}
+
+/* credit section ends */
+
+/* Orders Page starts */
+#view_item_details {
+    margin-top: 15px;
+    border-top: 2px solid #d6d6d6;
+    padding: 15px;
+}
+
+.view1_details {
+    margin-top: 15px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.text1_vid {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.text2_vid {
+    font-size: 18px;
+    color: #696969;
+}
+
+#track_order_details {
+    margin-top: 15px;
+    border-top: 2px solid #d6d6d6;
+    padding: 15px;
+}
+
+.tracking_progress_bar {
+    display: flex;
+}
+
+#order_details_info {
+    margin-top: 15px;
+    border-top: 2px solid #d6d6d6;
+    padding: 15px;
+}
+
+.card_content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons_parent {
+    display: flex;
+    gap: 10px;
+}
+
+.three_buttons_vto {
+    padding: 10px 30px 10px 30px;
+    border: 1px #aaa9a9 solid;
+    border-radius: 20px;
+    color: #6b6b6b;
+    cursor: pointer;
+}
+
+.details_within {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 10px;
+    gap: 50px;
+}
+
+/* Orders Page ends */
+
+/* Recently Viewed Section Starts */
+.xircls_recently_section_div {
+    justify-content: space-between;
+}
+
+/* Recently Viewed Section Ends */
+
+/* .show {
+    display: flex;
+}
+
+.accordion-collapse.show {
+    display: block !important;
+} */
+
+.hide {
+    display: none;
+}
+
+@media (max-width:900px) {
+    .xircls_left_menu {
+        display: none;
+    }
+
+    .yellow_back {
+        padding: 15px;
+        background-image: url('../assets/background_rectangles.png');
+        background-size: cover;
+    }
+
+    .xircls_middle_menu {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        width: 100%;
+        border-radius:
+            10px;
+        overflow: auto;
+        height: 86%;
+        margin: 10px;
+    }
+
+    .xircls_right_section {
+        display: none;
+    }
+
+    .slider_parent {
+        display: flex;
+    }
+
+    .banner_font1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .banner_font2 {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    /* privacy right content starts */
+    .main_box_privacy_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 40px;
+    }
+
+    .left_privacy_content {
+        display: none;
+    }
+
+    .right_privacy_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* privacy right content ends */
+
+    /* credit section starts */
+    .credit_section_hero {
+        font-size: 26px;
+        background-color: #000;
+        padding: 50px;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center
+    }
+
+    .credit_section_hero_right {
+        width: 100%;
+    }
+
+    .credit_section_hero_parent {
+        flex-direction: column;
+    }
+
+    .credit_page_graph {
+        width: 100px;
+    }
+
+    .text1_credit_section {
+        font-size: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text2_credit_section {
+        font-size: 20px;
+    }
+
+    .right_card_text1_credit {
+        font-size: 18px;
+    }
+
+    .right_card_text2_credit {
+        font-size: 25px;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    .table_rest {
+        font-size: 14px;
+    }
+
+    /* credit section ends */
+
+    /* Orders Page starts */
+    #view_item_details {
+        margin-top: 15px;
+        border-top: 2px solid #d6d6d6;
+        padding: 0px;
+    }
+
+    .view1_details {
+        margin-top: 15px;
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .text1_vid {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .text2_vid {
+        font-size: 14px;
+        color: #696969;
+    }
+
+    #track_order_details {
+        margin-top: 15px;
+        border-top: 2px solid #d6d6d6;
+        padding: 15px;
+    }
+
+    .tracking_progress_bar {
+        display: none;
+    }
+
+    #order_details_info {
+        margin-top: 15px;
+        border-top: 2px solid #d6d6d6;
+        padding: 15px;
+    }
+
+    .card_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .detail_parent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons_parent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .three_buttons_vto {
+        padding: 10px 30px 10px 30px;
+        border: 1px #aaa9a9 solid;
+        border-radius: 20px;
+        color: #6b6b6b;
+        cursor: pointer;
+    }
+
+    .details_within {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        margin: 10px;
+        gap: 50px;
+    }
+
+    .price {
+        margin-top: 15px;
+        font-size: 25px;
+    }
+
+    .price_tag {
+        display: none;
+    }
+
+    /* Orders Page ends */
+
+    /* Recently Viewed Section Starts */
+    .xircls_recently_section_div {
+        justify-content: space-evenly;
+    }
+
+    /* Recently Viewed Section Ends */
+
+    .address_type_parent {
+        gap: 00px;
+        justify-content: space-evenly;
+    }
+
+}

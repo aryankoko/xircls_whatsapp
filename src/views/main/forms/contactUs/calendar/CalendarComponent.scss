@@ -1,0 +1,127 @@
+.allColumns::-webkit-scrollbar {
+    display: none;
+}
+
+.timeButton::-webkit-scrollbar {
+    display: none;
+}
+
+.react-calendar__navigation button:disabled {
+    background-color: #f0f0f0 !important;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background-color: #e6e6e6;
+
+}
+
+.customeFullCalender {
+    * {
+        font-family: sans-serif !important;
+    }
+
+    width: 400px;
+    min-height: fit-content;
+    // border: solid 1px rgb(243, 243, 243) !important;
+    border-radius: 5px;
+
+    th {
+        border: none !important;
+    }
+
+    // table {border: solid 1px #000 !important;}
+    thead {
+        .fc-col-header-cell-cushion {
+            font-weight: 400 !important;
+            font-size: 13px !important;
+            color: #a4a4a4 !important;
+        }
+    }
+
+    td {
+        border: none !important;
+        border-radius: 5px !important;
+        font-size: 14px !important;
+        // max-width: 20px !important;
+        color: #4d4d4d;
+        padding: 0px !important;
+        margin: 0 !important;
+
+        // height: 20px !important;
+        * {
+            padding: 0px !important;
+            margin: 0 !important;
+        }
+
+        .fc-daygrid-day-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+
+    .fc-daygrid-day-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+    }
+
+    .fc-scrollgrid {
+        border: none !important;
+    }
+
+    .fc-header-toolbar {
+        margin-bottom: 7px !important;
+    }
+
+    .fc-today-button {
+        display: none !important;
+    }
+
+    .fc-toolbar {
+        // border-bottom: solid 1px rgb(243, 243, 243);
+        padding: 10px 0 !important;
+
+        .fc-toolbar-title {
+            color: #696969 !important;
+            font-size: 18px;
+            margin: 0;
+            margin-left: 10px !important;
+        }
+    }
+
+    .fc-button-group {
+
+        .fc-button-primary {
+            background-color: #39393900 !important;
+            color: rgb(78, 78, 78) !important;
+            border: none !important;
+            transition: all .5s ease;
+            margin-right: 5px !important;
+
+            &:focus {
+                outline: none !important; // Remove the default focus outline
+                box-shadow: none !important; // Add your desired focus style
+            }
+
+            &:active {
+                transform: scale(0.8);
+            }
+
+        }
+    }
+
+    .fc-daygrid-day-events {
+        display: none;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+
+
+}

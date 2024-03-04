@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @font-face {
+        font-family: "Tw Cen Mt";
+        src: url("https://www.demo.xircls.in/static/fonts/Tw Cen MT.ttf")
+          format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .xircls_account_parent {
+        font-family: Tw Cen Mt !important;
+        /* padding: 5px; */
+      }
+
+      .yellow_back{
+        padding: 50px;
+        background-image: url('./banner_back.png');
+        background-size: contain;
+      }
+
+      .main_font {
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .xircls_account_parent a {
+        font-size: 16px !important;
+        font-weight: 400;
+      }
+
+      .account_active {
+        background: #e2e2e2;
+      }
+
+      .address_type_select{
+        background-color: black;
+        color: white;
+      }
+
+      .header_font {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .xircls_account_parent .xircls_inputs {
+        height: 40px;
+        border-radius: 7px;
+        border: 1px solid #ccc !important;
+        /* padding: 0px 8px; */
+        margin-top: 5px;
+        width: 100%;
+        padding: 5px 10px 5px 10px;
+      }
+
+      .xircls_account_parent .xircls_label {
+        font-size: 17px;
+      }
+
+      #xircls_radio input[type="radio"],
+      #xircls_radio input[type="checkbox"] {
+        /* Hide original#xircls_radio inputs */
+        visibility: hidden !important;
+        position: absolute !important;
+      }
+
+      #xircls_radio input[type="radio"] + label:before,
+      #xircls_radio input[type="checkbox"] + label:before {
+        height: 16px !important;
+        width: 16px !important;
+        margin-right: 2px !important;
+        content: " ";
+        display: inline-block !important;
+        vertical-align: baseline !important;
+        border: 1px solid #000 !important;
+      }
+
+      #xircls_radio input[type="radio"]:checked + label:before,
+      #xircls_radio input[type="checkbox"]:checked + label:before {
+        /* background: #000; */
+        box-shadow: inset 0 0 0 4px #000 !important;
+      }
+
+      /* CUSTOM RADIO AND CHECKBOX STYLES */
+      #xircls_radio input[type="radio"] + label:before {
+        border-radius: 50% !important;
+      }
+
+      #xircls_radio input[type="checkbox"] + label:before {
+        border-radius: 2px !important;
+      }
+
+      #xircls_radio label {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 8px !important;
+        font-size: 14px !important;
+        margin-bottom: 8px !important;
+        font-family: Montserrat !important;
+        font-weight: normal !important;
+        color: #464646;
+      }
+
+      .xircls_btn_style {
+        padding: 8px 20px;
+        background-color: #000;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .xircls_btn_style_secondary {
+        padding: 8px 20px;
+        background-color: #fff;
+        color: #000;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      a:not([href]) {
+        cursor: pointer !important;
+      }
+
+      .whistlist_active {
+        color: red !important;
+      }
+
+      .payment-details {
+        font-size: 14px;
+      }
+
+      .xircls_add_box p {
+        margin: 0 !important;
+      }
+
+      #add-address-btn {
+        background-color: #333;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #address-form {
+        display: none;
+      }
+
+      #address-form label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+      }
+
+      #address-form input[type="text"],
+      #address-form input[type="submit"] {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      #address-form input[type="submit"] {
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+      }
+
+      #address-form input[type="submit"]:hover {
+        background-color: #333;
+      }
+      /* #button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+      } */
+      .primary-btn {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff !important;
+        background: #000 !important;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+
+      .xircls_left_menu{
+        width: 25%; 
+        border: 1px solid #ccc; 
+        border-radius: 10px; 
+        padding: 15px; 
+        margin: 10px;
+      }
+
+      .xircls_middle_menu::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .xircls_middle_menu {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        width: 70%; border-radius: 10px; overflow: auto; height: 86%; margin: 10px;
+      }
+
+      .xircls_right_section{
+        width: 25%; margin: 10px;
+      }
+
+      /* carousel css starts*/
+      * {
+        box-sizing: border-box;
+      }
+
+      .slider_parent{
+        display: none;
+      }
+
+      .slider {
+        width: 95%;
+        margin: 10px;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slides {
+        display: flex;
+        
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        
+        
+        
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        
+        /*
+        scroll-snap-points-x: repeat(300px);
+        scroll-snap-type: mandatory;
+        */
+      }
+      .slides::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      .slides::-webkit-scrollbar-thumb {
+        background: black;
+        border-radius: 10px;
+      }
+      .slides::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .slides > div {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 100%;
+        height: 170px;
+        margin-right: 20px;
+        border-radius: 10px;
+        /* background: #eee; */
+        border: 2px #eee solid ;
+        transform-origin: center center;
+        transform: scale(1);
+        transition: transform 0.5s;
+        position: relative;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* font-size: 100px; */
+      }
+
+      .slider > a {
+        display: inline-flex;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: white;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 0 0.5rem 0;
+        position: relative;
+      }
+      .slider > a:active {
+        top: 1px;
+      }
+      .slider > a:focus {
+        background: #000;
+      }
+
+      /* Don't need button navigation */
+      /* @supports (scroll-snap-type) {
+        .slider > a {
+          display: none;
+        }
+      } */
+
+      /* carousel css ends */
+
+      .banner_font1{
+        font-size: 32px; margin-bottom: 10px;
+      }
+
+      .banner_font2{
+        font-size: 16px; font-weight: 500;
+      }
+
+      /* address section starts */
+      .address_type:hover{
+        transition-property: background-color;
+        transition-duration: 700ms;
+        transition-timing-function: ease;
+        transform: translateY(0);
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+      .address_type_parent{
+        gap: 40px;
+        justify-content:center;
+      }
+      /* address section ends */
+
+      /* privacy right content starts */
+      .main_box_privacy_content{
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        width: 100%; 
+        height: 100%; 
+        margin-bottom: 40px;
+      }
+
+      .left_privacy_content{
+        display: flex; 
+        align-items: center;
+        justify-content: center; 
+        flex-direction: column; 
+        border-right: 1px #c7c7c7 solid;
+        height: 100%; 
+        width: 50%; 
+        gap: 30px;
+      }
+
+      .right_privacy_content{
+        display: flex; 
+        align-items: center;
+        justify-content: center; 
+        flex-direction: column; 
+        height: 100%; 
+        width: 50%;
+      }
+      /* privacy right content ends */
+
+      /* credit section starts */
+        .credit_section_hero{
+          font-size: 26px; 
+          background-color: #000; 
+          padding: 50px; 
+          width: 70%; 
+          border-radius: 10px; 
+          display: flex; 
+          justify-content: space-between; 
+          align-items:center;
+        }
+
+        /* .credit_page_graph{
+
+        } */
+
+        .credit_section_hero_right{
+          width: 30%; 
+        }
+
+        .text1_credit_section{
+          font-size: 45px;
+          display: flex;
+          align-items: center;
+        }
+
+        .text2_credit_section{
+          font-size: 20px;
+        }
+
+        .right_card_text1_credit{
+          font-size: 18px;
+        }
+
+        .right_card_text2_credit{
+          font-size: 25px;
+        }
+        td{
+          padding: 20px;
+        }
+
+        .table_rest{
+          font-size: 15px;
+        }
+      /* credit section ends */
+
+      /* Orders Page starts */
+      #view_item_details{
+        margin-top: 15px; 
+        border-top: 2px solid #d6d6d6; 
+        padding: 15px;
+      }
+
+      .view1_details{
+        margin-top: 15px; 
+        margin-left: 10px; 
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        gap: 35px;
+      }
+
+      .text1_vid{
+        font-size: 20px; 
+        margin-bottom: 10px;
+      }
+
+      .text2_vid{
+        font-size: 18px; 
+        color: #696969;
+      }
+
+      #track_order_details{
+        margin-top: 15px; 
+        border-top: 2px solid #d6d6d6; 
+        padding: 15px;
+      }
+
+      .tracking_progress_bar{
+        display: flex;
+      }
+
+      #order_details_info{
+        margin-top: 15px; 
+        border-top: 2px solid #d6d6d6; 
+        padding: 15px;  
+      }
+
+      .card_content{
+        display: flex; justify-content: space-around; align-items: center;
+      }
+
+      .buttons_parent{
+        display: flex; gap: 10px;
+      }
+
+      .three_buttons_vto{
+        padding: 10px 30px 10px 30px; border: 1px #aaa9a9 solid ; border-radius: 20px; color: #6b6b6b; cursor: pointer;
+      }
+
+      .details_within{
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        font-size: 14px; 
+        margin: 10px;
+        gap: 50px;
+      }
+
+      /* Orders Page ends */
+
+      /* Recently Viewed Section Starts */
+      .xircls_recently_section_div{
+        justify-content: space-between;
+      }
+      /* Recently Viewed Section Ends */
+
+      .show{
+        display: flex;
+      }
+
+      .hide{
+        display: none;
+      }
+
+      @media (max-width:900px){
+          .xircls_left_menu{
+          display: none;
+        }
+
+        .yellow_back{
+          padding: 15px;
+          background-image: url('./background_rectangles.png');
+          background-size: cover;
+        }
+
+        .xircls_middle_menu {
+          -ms-overflow-style: none;
+          /* IE and Edge */
+          scrollbar-width: none;
+          /* Firefox */
+          width: 100%; 
+          border-radius: 
+          10px; 
+          overflow: auto; 
+          height: 86%; 
+          margin: 10px;
+        }
+
+        .xircls_right_section{
+          display: none;
+        }
+
+        .slider_parent{
+          display: flex;
+        }
+
+        .banner_font1{
+        font-size: 24px; margin-bottom: 10px;
+        }
+
+        .banner_font2{
+          font-size: 12px; font-weight: 500;
+        }
+
+        /* privacy right content starts */
+        .main_box_privacy_content{
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          width: 100%; 
+          height: 100%; 
+          margin-bottom: 40px;
+        }
+
+        .left_privacy_content{
+          display: none; 
+        }
+
+        .right_privacy_content{
+          display: flex; 
+          align-items: center;
+          justify-content: center; 
+          flex-direction: column; 
+          height: 100%; 
+          width: 100%;
+        }
+        /* privacy right content ends */
+
+        /* credit section starts */
+        .credit_section_hero{
+          font-size: 26px; 
+          background-color: #000; 
+          padding: 50px; 
+          width: 100%; 
+          border-radius: 10px; 
+          display: flex; 
+          flex-direction: column;
+          justify-content: center; 
+          align-items:center;
+          text-align: center
+        }
+
+        .credit_section_hero_right{
+          width: 100%; 
+        }
+
+        .credit_section_hero_parent{
+          flex-direction: column;
+        }
+
+        .credit_page_graph{
+          width: 100px;
+        }
+
+        .text1_credit_section{
+          font-size: 45px;
+          display: flex;  align-items: center;
+          justify-content: center;
+        }
+
+        .text2_credit_section{
+          font-size: 20px;
+        }
+
+        .right_card_text1_credit{
+          font-size: 18px;
+        }
+
+        .right_card_text2_credit{
+          font-size: 25px;
+        }
+
+        td{
+          padding: 10px;
+        }
+
+        .table_rest{
+          font-size: 14px;
+        }
+      /* credit section ends */
+
+      /* Orders Page starts */
+      #view_item_details{
+        margin-top: 15px; 
+        border-top: 2px solid #d6d6d6; 
+        padding: 0px;
+      }
+
+      .view1_details{
+        margin-top: 15px; 
+        margin-left: 0px; 
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        gap: 10px;
+      }
+
+      .text1_vid{
+        font-size: 16px; 
+        margin-bottom: 10px;
+      }
+
+      .text2_vid{
+        font-size: 14px; 
+        color: #696969;
+      }
+
+      #track_order_details{
+        margin-top: 15px; 
+        border-top: 2px solid #d6d6d6; 
+        padding: 15px;
+      }
+
+      .tracking_progress_bar{
+        display: none;
+      }
+
+      #order_details_info{
+        margin-top: 15px; 
+        border-top: 2px solid #d6d6d6; 
+        padding: 15px;  
+      }
+
+      .card_content{
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-around; 
+        align-items: center;
+      }
+      .detail_parent{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .buttons_parent{
+        display: flex;
+        flex-direction:column ;
+      }
+
+      .three_buttons_vto{
+        padding: 10px 30px 10px 30px; border: 1px #aaa9a9 solid ; border-radius: 20px; color: #6b6b6b; cursor: pointer;
+      }
+
+      .details_within{
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        font-size: 14px; 
+        margin: 10px;
+        gap: 50px;
+      }
+
+      .price{
+        margin-top: 15px;
+        font-size: 25px;
+      }
+
+      .price_tag{
+        display: none;
+      }
+
+      /* Orders Page ends */
+
+      /* Recently Viewed Section Starts */
+      .xircls_recently_section_div{
+        justify-content: space-evenly;
+      }
+      /* Recently Viewed Section Ends */
+
+      .address_type_parent{
+        gap: 00px;
+        justify-content:space-evenly;
+      }
+
+      }
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <!-- <div id="toastr-container"
+    style="position: fixed; top: 50px; left: 50%; transform: translateX(-50%); z-index: 0;max-width: 90%;">
+    <div class="xircls_toastr"
+      style="display: flex; justify-content: center; align-items: center; padding: 8px 10px; border-radius: 3px; opacity: 0; transition: all 0.9s ease 0s; font-family: sans-serif;gap: 10px;">
+      <span>
+        <i class="fa fa-check" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
+      </span>
+      <p style="color: #fff;margin: 0;padding: 0;font-size: 14px;" id="text_for_toastr"></p>
+    </div>
+
+  </div> -->
+
+    <div id="MainContent" style=" height: 100%; width: 90%; margin: 0px;">
+
+        <div style="display: flex;align-items: center; justify-content: center; padding: 20px; margin-bottom: 15px;">
+            <img src="Snitch Logo.png" alt="snitch_logo" >
+        </div>
+
+        <div class="yellow_back" style="background-color: #FFE453;  margin: 10px; border-radius: 10px;  display: flex;  background-repeat: no-repeat; background-position: right ;">
+
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+                <div>
+                    <div class="banner_font1" >Good Morning,<span style="font-weight: 800;"> Daisy</span></div>
+                    <div class="banner_font2" >Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                </div>
+
+                <div style="background-color: white; height: 56px; width: 154px; display: flex; justify-content: flex-start; align-items: center; border-radius: 10px;">
+                    <img src="clock.png" alt="" style="margin-left: 15px; ">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- SLIDER NAVIGIATION - MOBILE STARTS  -->
+        <div class="slider_parent" style="width: 100%;  flex-direction: column; justify-content: center; align-items: center;">
+                  
+          <div class="slider">
+          
+            <div class="slides">
+
+              <!-- SLIDE 1 STARTS -->
+              <div id="slide-1" style="flex-wrap: wrap; padding: 10px;">
+                
+                <!-- ORDER SECTION -->
+                <div id="Order_page" class="Order_page xircls_box_section" onclick="activeSection('order_section', 'Order_page')" style=" width: 10%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px; margin-right: 10px; ">
+                    
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 14.48 16.12" style="width: 20px; display: flex">
+                    <path id="Layer_2" data-name="Layer 2" d="M3.86,6.32a.84.84,0,0,1,.42-.73V3a3,3,0,1,1,5.89,0V5.59a.83.83,0,0,1,.43.73.84.84,0,1,1-1.26-.73V3A2.11,2.11,0,1,0,5.13,3V5.59a.84.84,0,0,1-.42,1.57A.86.86,0,0,1,3.86,6.32Zm8.36-3H11v.84h.49L13,12.63H2.19v.84h11l.3,1.69H1L3,4.21h.49V3.37H2.25L0,16H14.48ZM6,4.21H8.5V3.37H6Z" transform="translate(0 0.12)"></path>
+                  </svg>
+
+                  <a id="Order-link" data-template="Order" class="xircls-list">
+                    <div class="nav_items_xircls" style="font-size: 16px">
+                      Order
+                    </div>
+                  </a>
+                </div>
+                <!-- ORDER SECTION -->
+
+                <!-- WISHLIST SECTION -->
+                <div id="Wishlist_page" class="xircls_box_section" onclick="activeSection('wishlist_section', 'Wishlist_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px; " >
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 18.45 16" style="width: 20px; display: flex">
+                    <path id="Layer_2" data-name="Layer 2" d="M17.57,2.16A4.72,4.72,0,0,0,13.86,0h0c-2,0-3.77,1.52-4.58,2.36C8.42,1.52,6.67,0,4.65,0H4.6A4.72,4.72,0,0,0,.87,2.18a5.1,5.1,0,0,0,.65,6.48L8.8,15.82a.6.6,0,0,0,.85,0h0l7.27-7.16A5.1,5.1,0,0,0,17.57,2.16Zm-1.5,5.62L9.23,14.52,2.39,7.78A3.84,3.84,0,0,1,1.87,2.9,3.57,3.57,0,0,1,4.61,1.23h0c2.14,0,4.08,2.42,4.1,2.44a.64.64,0,0,0,.9.07l.06-.07s2-2.49,4.13-2.44a3.55,3.55,0,0,1,2.73,1.64A3.85,3.85,0,0,1,16,7.78Z" transform="translate(0)"></path>
+                  </svg>
+
+                  <a id="Wishlist-link" data-template="Wishlist" class="xircls-list">
+                    <div class="nav_items_xircls" style="font-size: 16px">
+                      Wishlist
+                    </div>
+                  </a>
+                </div>
+                <!-- WISHLIST SECTION -->
+                
+                <!-- CREDIT SECTION -->
+                <div id="credit_page" class="account_active xircls_box_section" onclick="activeSection('credit_section', 'credit_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; margin-bottom: 15px; margin-right: 10px; padding: 12px 0px; border-radius: 10px; gap: 5px; " >
+                  
+                  <img src="credits.png" alt="credits" style="width: 20px;">
+
+                  <a id="profile-link" data-template="profile" class="xircls-list">
+                    <div class="nav_items_xircls" style="font-size: 16px">
+                      Credits
+                    </div>
+                  </a>
+
+                </div>
+                <!-- CREDIT SECTION -->
+
+
+
+                <!-- RECENTS SECTION -->
+                <div id="recently_page" class="account_active xircls_box_section" 
+                onclick="activeSection('recently_section', 'recently_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; margin-bottom: 15px; padding: 12px; border-radius: 10px; gap: 5px; " >
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16.02 16.05" style="width: 20px">
+                    <path
+                      id="Layer_2"
+                      data-name="Layer 2"
+                      d="M6.14,8.58a4.81,4.81,0,0,1-3.8-2.25l-.09-.14L2.31,6A4.13,4.13,0,0,1,6.14,3.79,4.37,4.37,0,0,1,10.07,6l.08.17-.1.15A5.17,5.17,0,0,1,6.14,8.58ZM3,6.13A4.11,4.11,0,0,0,6.14,7.92,4.41,4.41,0,0,0,9.39,6.13,3.77,3.77,0,0,0,6.14,4.44,3.49,3.49,0,0,0,3,6.13ZM6.05,7.41A1.24,1.24,0,1,1,7.29,6.17h0A1.25,1.25,0,0,1,6.05,7.41Zm0-1.82a.58.58,0,1,0,.58.58h0A.58.58,0,0,0,6.05,5.59Zm9.82,9.66-5-5a6.05,6.05,0,0,0,1.54-4.06,6.22,6.22,0,1,0-2.16,4.68l5,5a.42.42,0,0,0,.3.12.44.44,0,0,0,.32-.74ZM6.19,11.5a5.32,5.32,0,1,1,5.33-5.32A5.32,5.32,0,0,1,6.19,11.5Z"
+                      transform="translate(0.03 0.06)"
+                    ></path>
+                  </svg>
+
+                  <a
+                    id="recently-link"
+                    data-template="recently"
+                    class="xircls-list"
+                  >
+                    <div>Recents</div>
+                  </a>
+                </div>
+                <!-- RECENTS SECTION -->
+
+              </div>
+              <!-- SLIDE 1 ENDS-->
+
+
+              <!-- SLIDE 2 STARTS -->
+              <div id="slide-2" style="flex-wrap: wrap; padding: 10px;">
+                
+                <div id="profile_page" class="recently xircls_box_section" onclick="activeSection('profile_section', 'profile_page')"  style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px; margin-right: 10px;"  >
+
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16 15.94" style="width: 20px; display: flex; color: #4b4b4b" > <path id="Layer_2" data-name="Layer 2" d="M16,16h-.78A7.22,7.22,0,1,0,.78,16H0A8,8,0,0,1,7.93,7.93H8a8,8,0,0,1,8,8ZM11.52,3.55A3.52,3.52,0,1,0,8,7.1,3.52,3.52,0,0,0,11.52,3.55Zm-.79,0A2.73,2.73,0,1,1,8,.79,2.73,2.73,0,0,1,10.73,3.55Z" transform="translate(0 -0.06)" ></path>
+                  </svg>
+
+                  <a id="address-link" data-template="address" class="xircls-list">
+                    <div class="nav_items_xircls" style="font-size: 16px">
+                      Profile
+                    </div>
+                  </a>
+
+                </div>
+
+                <div id="address_page" class="recently xircls_box_section" onclick="activeSection('address_section', 'address_page')"  style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%;  padding: 12px 0px; border-radius: 10px; gap: 5px; "  >
+
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 13.15 15.87" style="width: 20px; display: flex">
+                    <path id="Layer_2" data-name="Layer 2" d="M6.6,16,1.9,11.3a6.64,6.64,0,0,1,0-9.4h0a6.73,6.73,0,0,1,9.4.3,6.53,6.53,0,0,1,0,9ZM2.5,2.5a5.73,5.73,0,0,0,0,8.2l4.1,4.1,4.1-4.1a5.73,5.73,0,0,0,0-8.2A5.92,5.92,0,0,0,2.5,2.5ZM6.6,8.7a2,2,0,1,1,2-2A2,2,0,0,1,6.6,8.7Zm0-3.3A1.29,1.29,0,0,0,5.4,6.6,1.16,1.16,0,0,0,6.6,7.8,1.16,1.16,0,0,0,7.8,6.6h0A1.22,1.22,0,0,0,6.6,5.4Z" transform="translate(0.05 -0.13)"></path>
+                  </svg>
+                  <a id="address-link" data-template="address" class="xircls-list">
+                    <div class="nav_items_xircls" style="font-size: 16px">
+                      Address
+                    </div>
+                  </a>
+
+                </div>
+
+                <div id="offer_page" class="recently xircls_box_section" onclick="activeSection('offer_section', 'offer_page')"  style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%;  padding: 12px 0px; border-radius: 10px; gap: 5px; margin-right: 10px; margin-bottom: 10px;"  >
+
+                  <img src="discount.png" alt="discount" style="width: 20px;">
+                  <a id="address-link" data-template="address" class="xircls-list">
+                    <div class="nav_items_xircls" style="font-size: 16px">
+                      Offers
+                    </div>
+                  </a>
+
+                </div>
+
+                <div class="reset xircls_box_section" id="reset_page" onclick="activeSection('reset_section', 'reset_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%;margin-bottom: 10px;  padding: 12px 0px; border-radius: 10px; gap: 5px; " >
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 15.31 16.02" style="width: 20px">
+                    <path
+                      id="Layer_2"
+                      data-name="Layer 2"
+                      d="M13.74,16H1.57A1.57,1.57,0,0,1,0,14.43V8.15A1.57,1.57,0,0,1,1.57,6.58H13.74a1.57,1.57,0,0,1,1.57,1.57v6.28A1.57,1.57,0,0,1,13.74,16ZM1.57,7.36a.78.78,0,0,0-.78.78h0v6.28a.78.78,0,0,0,.78.78H13.74a.78.78,0,0,0,.79-.77h0V8.15a.79.79,0,0,0-.79-.79ZM11,7H4.32V3.4A3.41,3.41,0,0,1,5.47.84,3.23,3.23,0,0,1,8.06,0,3.41,3.41,0,0,1,11,3.47ZM5.11,6.18h5.1V3.47A2.66,2.66,0,0,0,8,.81a2.51,2.51,0,0,0-2,.61,2.65,2.65,0,0,0-.88,2ZM4,12.82a1.31,1.31,0,1,1,.23,0ZM4,11a.52.52,0,0,0-.52.52h0A.53.53,0,0,0,4,12a.52.52,0,0,0,.52-.52h0A.52.52,0,0,0,4,11Zm3.53,1.82a1.31,1.31,0,1,1,1.3-1.32s0,0,0,0a1.31,1.31,0,0,1-1.32,1.3h0Zm0-1.82a.52.52,0,0,0-.52.52H7a.52.52,0,0,0,.52.52h0A.53.53,0,0,0,8,11.52.52.52,0,0,0,7.48,11h0ZM11,12.82a1.31,1.31,0,1,1,.23,0ZM11,11a.52.52,0,0,0-.52.52h0A.53.53,0,0,0,11,12a.52.52,0,0,0,.52-.52h0A.52.52,0,0,0,11,11Z"
+                      transform="translate(0 0.02)"
+                    ></path>
+                  </svg>
+
+                  <a id="reset-link" data-template="reset" class="xircls-list">
+                    <div>Reset</div>
+                  </a>
+                </div>
+
+              </div>
+              <!-- SLIDE 2 ENDS -->
+
+
+              <!-- SLIDE 3 STARTS -->
+              <div id="slide-3">
+
+                <div class="logout" style=" display: flex; justify-content: flex-start; align-items: center; gap: 15px; margin-bottom: 10px; padding: 8px 10px; border-radius: 7px;">
+              
+                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16 16" style="width: 20px">
+                    <path
+                      id="Layer_2"
+                      data-name="Layer 2"
+                      d="M8,16A8,8,0,0,1,0,8,7.94,7.94,0,0,1,2.5,2.2a.45.45,0,0,1,.5,0,.45.45,0,0,1,0,.5A7.27,7.27,0,0,0,2.8,13a7.16,7.16,0,0,0,10.2.2A7.26,7.26,0,0,0,15.2,8a7.11,7.11,0,0,0-2.1-5.1.38.38,0,0,1,0-.6.38.38,0,0,1,.6,0A8.27,8.27,0,0,1,16,8,8,8,0,0,1,8,16Zm.3-8.2V.4C8.3.2,8.2,0,8,0a.43.43,0,0,0-.4.4h0V7.8a.43.43,0,0,0,.4.4H8c.2,0,.3-.2.3-.4Z"
+                    ></path>
+                  </svg>
+
+
+                  <a id="logout-link" data-template="logout" class="xircls-list">
+                    <div>Logout</div>
+                  </a>
+                </div>
+
+              </div>
+              <!-- SLIDE 3 ENDS -->
+
+            </div>
+          </div>
+
+
+          <div class="name_section" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+            <div class="hero_font" style=" font-size: 20px; background-color: #fff45e; padding: 10px; border-radius: 50%; width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; font-size: 40px; " >
+              DS
+            </div>
+          </div>
+          <div class="ful_name" style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="main_font" style=" text-align: center; font-size: 20px; text-transform: capitalize; ">
+              Daisy S
+            </div>
+          </div>
+
+        </div>
+        <!-- SLIDER NAVIGIATION - MOBILE ENDS  -->
+
+
+
+
+      <div class="xircls_account_parent" style=" display: flex; justify-content: space-between; align-items: flex-start; width: 100%; ">
+
+        <!-- LEFT COMPONENT STARTS -->
+        <div class="xircls_left_menu">
+          <div class="name_section" style="display: flex; justify-content: center; align-items: center">
+            <div class="hero_font" style=" font-size: 20px; background-color: #fff45e; padding: 10px; border-radius: 50%; width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; font-size: 40px; " >
+              DS
+            </div>
+          </div>
+          <div class="ful_name" style="margin-top: 20px">
+            <div class="main_font" style=" text-align: center; font-size: 20px; text-transform: capitalize; ">
+              Daisy S
+            </div>
+          </div>
+
+          <div style="background-color: red; width: 15px; height: 15px; border-radius: 50%; position:relative; left: 38%; top: 43px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; text-align: center;">2</div>
+
+          <div class="xircls_sections" style=" margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px; " >
+            
+
+            
+            <!-- ORDER SECTION -->
+            <div id="Order_page" class="Order_page xircls_box_section" onclick="activeSection('order_section', 'Order_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px; ">
+
+              
+                
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 14.48 16.12" style="width: 20px; display: flex">
+                <path id="Layer_2" data-name="Layer 2" d="M3.86,6.32a.84.84,0,0,1,.42-.73V3a3,3,0,1,1,5.89,0V5.59a.83.83,0,0,1,.43.73.84.84,0,1,1-1.26-.73V3A2.11,2.11,0,1,0,5.13,3V5.59a.84.84,0,0,1-.42,1.57A.86.86,0,0,1,3.86,6.32Zm8.36-3H11v.84h.49L13,12.63H2.19v.84h11l.3,1.69H1L3,4.21h.49V3.37H2.25L0,16H14.48ZM6,4.21H8.5V3.37H6Z" transform="translate(0 0.12)"></path>
+              </svg>
+
+              <a id="Order-link" data-template="Order" class="xircls-list">
+                <div class="nav_items_xircls" style="font-size: 16px">
+                  Order
+                </div>
+              </a>
+            </div>
+            <!-- ORDER SECTION -->
+
+             <!-- WISHLIST SECTION -->
+             <div id="Wishlist_page" class="xircls_box_section" onclick="activeSection('wishlist_section', 'Wishlist_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px; " >
+              
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 18.45 16" style="width: 20px; display: flex">
+                <path id="Layer_2" data-name="Layer 2" d="M17.57,2.16A4.72,4.72,0,0,0,13.86,0h0c-2,0-3.77,1.52-4.58,2.36C8.42,1.52,6.67,0,4.65,0H4.6A4.72,4.72,0,0,0,.87,2.18a5.1,5.1,0,0,0,.65,6.48L8.8,15.82a.6.6,0,0,0,.85,0h0l7.27-7.16A5.1,5.1,0,0,0,17.57,2.16Zm-1.5,5.62L9.23,14.52,2.39,7.78A3.84,3.84,0,0,1,1.87,2.9,3.57,3.57,0,0,1,4.61,1.23h0c2.14,0,4.08,2.42,4.1,2.44a.64.64,0,0,0,.9.07l.06-.07s2-2.49,4.13-2.44a3.55,3.55,0,0,1,2.73,1.64A3.85,3.85,0,0,1,16,7.78Z" transform="translate(0)"></path>
+              </svg>
+
+              <a id="Wishlist-link" data-template="Wishlist" class="xircls-list">
+                <div class="nav_items_xircls" style="font-size: 16px">
+                  Wishlist
+                </div>
+              </a>
+            </div>
+            <!-- WISHLIST SECTION -->
+            
+            <!-- CREDIT SECTION -->
+            <div id="credit_page" class="account_active xircls_box_section" onclick="activeSection('credit_section', 'credit_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; margin-bottom: 15px; padding: 12px 0px; border-radius: 10px; gap: 5px; " >
+              
+              <img src="credits.png" alt="credits">
+
+              <a id="profile-link" data-template="profile" class="xircls-list">
+                <div class="nav_items_xircls" style="font-size: 16px">
+                  Credits
+                </div>
+              </a>
+
+            </div>
+            <!-- CREDIT SECTION -->
+
+
+
+            <!-- RECENTS SECTION -->
+            <div id="recently_page" class="account_active xircls_box_section" 
+            onclick="activeSection('recently_section', 'recently_page')" style=" width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-basis: 45%; margin-bottom: 15px; padding: 12px 0px; border-radius: 10px; gap: 5px; " >
+              
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16.02 16.05" style="width: 20px">
+                <path
+                  id="Layer_2"
+                  data-name="Layer 2"
+                  d="M6.14,8.58a4.81,4.81,0,0,1-3.8-2.25l-.09-.14L2.31,6A4.13,4.13,0,0,1,6.14,3.79,4.37,4.37,0,0,1,10.07,6l.08.17-.1.15A5.17,5.17,0,0,1,6.14,8.58ZM3,6.13A4.11,4.11,0,0,0,6.14,7.92,4.41,4.41,0,0,0,9.39,6.13,3.77,3.77,0,0,0,6.14,4.44,3.49,3.49,0,0,0,3,6.13ZM6.05,7.41A1.24,1.24,0,1,1,7.29,6.17h0A1.25,1.25,0,0,1,6.05,7.41Zm0-1.82a.58.58,0,1,0,.58.58h0A.58.58,0,0,0,6.05,5.59Zm9.82,9.66-5-5a6.05,6.05,0,0,0,1.54-4.06,6.22,6.22,0,1,0-2.16,4.68l5,5a.42.42,0,0,0,.3.12.44.44,0,0,0,.32-.74ZM6.19,11.5a5.32,5.32,0,1,1,5.33-5.32A5.32,5.32,0,0,1,6.19,11.5Z"
+                  transform="translate(0.03 0.06)"
+                ></path>
+              </svg>
+
+              <a
+                id="recently-link"
+                data-template="recently"
+                class="xircls-list"
+              >
+                <div>Recents</div>
+              </a>
+            </div>
+            <!-- RECENTS SECTION -->
+
+
+            
+
+           
+
+          </div>
+
+          <div class="xircls_section_two" style="padding: 10px">
+            
+            <div id="profile_page" class="recently xircls_box_section" onclick="activeSection('profile_section', 'profile_page')"  style=" display: flex; justify-content: flex-start; align-items: center; gap: 15px; margin-bottom: 10px; padding: 8px 10px; border-radius: 7px; " >
+
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16 15.94" style="width: 20px; display: flex; color: #4b4b4b" > <path id="Layer_2" data-name="Layer 2" d="M16,16h-.78A7.22,7.22,0,1,0,.78,16H0A8,8,0,0,1,7.93,7.93H8a8,8,0,0,1,8,8ZM11.52,3.55A3.52,3.52,0,1,0,8,7.1,3.52,3.52,0,0,0,11.52,3.55Zm-.79,0A2.73,2.73,0,1,1,8,.79,2.73,2.73,0,0,1,10.73,3.55Z" transform="translate(0 -0.06)" ></path>
+              </svg>
+
+              <a id="address-link" data-template="address" class="xircls-list">
+                <div class="nav_items_xircls" style="font-size: 16px">
+                  Profile
+                </div>
+              </a>
+
+            </div>
+
+            <div id="address_page" class="recently xircls_box_section" onclick="activeSection('address_section', 'address_page')"  style=" display: flex; justify-content: flex-start; align-items: center; gap: 15px; margin-bottom: 10px; padding: 8px 10px; border-radius: 7px; " >
+
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 13.15 15.87" style="width: 20px; display: flex">
+                <path id="Layer_2" data-name="Layer 2" d="M6.6,16,1.9,11.3a6.64,6.64,0,0,1,0-9.4h0a6.73,6.73,0,0,1,9.4.3,6.53,6.53,0,0,1,0,9ZM2.5,2.5a5.73,5.73,0,0,0,0,8.2l4.1,4.1,4.1-4.1a5.73,5.73,0,0,0,0-8.2A5.92,5.92,0,0,0,2.5,2.5ZM6.6,8.7a2,2,0,1,1,2-2A2,2,0,0,1,6.6,8.7Zm0-3.3A1.29,1.29,0,0,0,5.4,6.6,1.16,1.16,0,0,0,6.6,7.8,1.16,1.16,0,0,0,7.8,6.6h0A1.22,1.22,0,0,0,6.6,5.4Z" transform="translate(0.05 -0.13)"></path>
+              </svg>
+              <a id="address-link" data-template="address" class="xircls-list">
+                <div class="nav_items_xircls" style="font-size: 16px">
+                  Address
+                </div>
+              </a>
+
+            </div>
+
+            <div id="offer_page" class="recently xircls_box_section" onclick="activeSection('offer_section', 'offer_page')"  style=" display: flex; justify-content: flex-start; align-items: center; gap: 15px; margin-bottom: 10px; padding: 8px 10px; border-radius: 7px; " >
+
+              <img src="discount.png" alt="discount" style="width: 20px;">
+              <a id="address-link" data-template="address" class="xircls-list">
+                <div class="nav_items_xircls" style="font-size: 16px">
+                  Offers
+                </div>
+              </a>
+
+            </div>
+
+            <div class="reset xircls_box_section" id="reset_page" onclick="activeSection('reset_section', 'reset_page')" style=" display: flex; justify-content: flex-start; align-items: center; gap: 15px; margin-bottom: 10px; padding: 8px 10px; border-radius: 7px; ">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 15.31 16.02" style="width: 20px">
+                <path
+                  id="Layer_2"
+                  data-name="Layer 2"
+                  d="M13.74,16H1.57A1.57,1.57,0,0,1,0,14.43V8.15A1.57,1.57,0,0,1,1.57,6.58H13.74a1.57,1.57,0,0,1,1.57,1.57v6.28A1.57,1.57,0,0,1,13.74,16ZM1.57,7.36a.78.78,0,0,0-.78.78h0v6.28a.78.78,0,0,0,.78.78H13.74a.78.78,0,0,0,.79-.77h0V8.15a.79.79,0,0,0-.79-.79ZM11,7H4.32V3.4A3.41,3.41,0,0,1,5.47.84,3.23,3.23,0,0,1,8.06,0,3.41,3.41,0,0,1,11,3.47ZM5.11,6.18h5.1V3.47A2.66,2.66,0,0,0,8,.81a2.51,2.51,0,0,0-2,.61,2.65,2.65,0,0,0-.88,2ZM4,12.82a1.31,1.31,0,1,1,.23,0ZM4,11a.52.52,0,0,0-.52.52h0A.53.53,0,0,0,4,12a.52.52,0,0,0,.52-.52h0A.52.52,0,0,0,4,11Zm3.53,1.82a1.31,1.31,0,1,1,1.3-1.32s0,0,0,0a1.31,1.31,0,0,1-1.32,1.3h0Zm0-1.82a.52.52,0,0,0-.52.52H7a.52.52,0,0,0,.52.52h0A.53.53,0,0,0,8,11.52.52.52,0,0,0,7.48,11h0ZM11,12.82a1.31,1.31,0,1,1,.23,0ZM11,11a.52.52,0,0,0-.52.52h0A.53.53,0,0,0,11,12a.52.52,0,0,0,.52-.52h0A.52.52,0,0,0,11,11Z"
+                  transform="translate(0 0.02)"
+                ></path>
+              </svg>
+
+              <a id="reset-link" data-template="reset" class="xircls-list">
+                <div>Reset Password</div>
+              </a>
+            </div>
+
+            <div class="logout" style=" display: flex; justify-content: flex-start; align-items: center; gap: 15px;  padding: 8px 10px; border-radius: 7px;">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16 16" style="width: 20px">
+                <path
+                  id="Layer_2"
+                  data-name="Layer 2"
+                  d="M8,16A8,8,0,0,1,0,8,7.94,7.94,0,0,1,2.5,2.2a.45.45,0,0,1,.5,0,.45.45,0,0,1,0,.5A7.27,7.27,0,0,0,2.8,13a7.16,7.16,0,0,0,10.2.2A7.26,7.26,0,0,0,15.2,8a7.11,7.11,0,0,0-2.1-5.1.38.38,0,0,1,0-.6.38.38,0,0,1,.6,0A8.27,8.27,0,0,1,16,8,8,8,0,0,1,8,16Zm.3-8.2V.4C8.3.2,8.2,0,8,0a.43.43,0,0,0-.4.4h0V7.8a.43.43,0,0,0,.4.4H8c.2,0,.3-.2.3-.4Z"
+                ></path>
+              </svg>
+
+
+              <a id="logout-link" data-template="logout" class="xircls-list">
+                <div>Logout</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- LEFT COMPONENT ENDS -->
+
+
+
+
+
+
+
+        <!-- MIDDLE COMPONENT STARTS -->
+        <div class="xircls_middle_menu">
+
+          <!-- PROFILE SECTION STARTS -->
+          <div id="profile_section" class="xircls_content_here">
+            
+            <div style="padding: 20px 30px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 25px;">
+              
+              <div style="font-size: 30px;display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 30px;">
+                <div>Personal Information</div>
+                <div style="font-size: 18px; display: flex; justify-content: center; align-items: center;  color: #6b6b6b; padding: 5px; cursor: pointer;" onclick="makeEditable('editableText1')"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="edit" style=" width:16px;"><path fill="#c0c0c0" d="M3.5,24h15A3.51,3.51,0,0,0,22,20.487V12.95a1,1,0,0,0-2,0v7.537A1.508,1.508,0,0,1,18.5,22H3.5A1.508,1.508,0,0,1,2,20.487V5.513A1.508,1.508,0,0,1,3.5,4H11a1,1,0,0,0,0-2H3.5A3.51,3.51,0,0,0,0,5.513V20.487A3.51,3.51,0,0,0,3.5,24Z"></path><path fill="#c0c0c0" d="M9.455,10.544l-.789,3.614a1,1,0,0,0,.271.921,1.038,1.038,0,0,0,.92.269l3.606-.791a1,1,0,0,0,.494-.271l9.114-9.114a3,3,0,0,0,0-4.243,3.07,3.07,0,0,0-4.242,0l-9.1,9.123A1,1,0,0,0,9.455,10.544Zm10.788-8.2a1.022,1.022,0,0,1,1.414,0,1.009,1.009,0,0,1,0,1.413l-.707.707L19.536,3.05Zm-8.9,8.914,6.774-6.791,1.4,1.407-6.777,6.793-1.795.394Z"></path></svg></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 15px;">
+                <div style="font-size: 17px;">Name</div>
+                <div class="editableText1" style="font-size: 17px; display: flex; justify-content: center; align-items: center;">Daisy S</div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 15px;">
+                <div style="font-size: 17px;">Birth-Date</div>
+                <div class="editableText1" style="font-size: 17px; display: flex; justify-content: center; align-items: center;">03-03-2001</div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 15px;">
+                <div style="font-size: 17px;">Gender</div>
+                <div class="editableText1" style="font-size: 17px; display: flex; justify-content: center; align-items: center;">Female</div>
+              </div>
+
+            </div>
+
+            <div style="padding: 20px 30px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 25px;">
+              
+              <div style="font-size: 30px;display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 30px;">
+                <div>Contact Information</div>
+                <div onclick="makeEditable('editableText2')" style="font-size: 18px; display: flex; justify-content: center; align-items: center; color: #6b6b6b; padding: 5px; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="edit" style=" width:16px;"><path fill="#c0c0c0" d="M3.5,24h15A3.51,3.51,0,0,0,22,20.487V12.95a1,1,0,0,0-2,0v7.537A1.508,1.508,0,0,1,18.5,22H3.5A1.508,1.508,0,0,1,2,20.487V5.513A1.508,1.508,0,0,1,3.5,4H11a1,1,0,0,0,0-2H3.5A3.51,3.51,0,0,0,0,5.513V20.487A3.51,3.51,0,0,0,3.5,24Z"></path><path fill="#c0c0c0" d="M9.455,10.544l-.789,3.614a1,1,0,0,0,.271.921,1.038,1.038,0,0,0,.92.269l3.606-.791a1,1,0,0,0,.494-.271l9.114-9.114a3,3,0,0,0,0-4.243,3.07,3.07,0,0,0-4.242,0l-9.1,9.123A1,1,0,0,0,9.455,10.544Zm10.788-8.2a1.022,1.022,0,0,1,1.414,0,1.009,1.009,0,0,1,0,1.413l-.707.707L19.536,3.05Zm-8.9,8.914,6.774-6.791,1.4,1.407-6.777,6.793-1.795.394Z"></path></svg></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 15px;">
+                <div style="font-size: 17px;">Email</div>
+                <div class="editableText2" style="font-size: 17px; display: flex; justify-content: center; align-items: center;">mail@mail.mail</div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 15px;">
+                <div style="font-size: 17px;">Phone</div>
+                <div class="editableText2" style="font-size: 17px; display: flex; justify-content: center; align-items: center;">123459604</div>
+              </div>
+
+            </div>
+
+            <div style="padding: 20px 30px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 25px;">
+              
+              <div style="font-size: 30px;display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 30px;">
+                <div>Delivery Information</div>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                  <div style="font-size: 18px; display: flex; justify-content: center; align-items: center; color: #6b6b6b; padding: 5px; cursor: pointer;" onclick="activeSection('address_section', 'address_page')"><svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="add-new"><path fill="#c0c0c0" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Zm4-9H13V8a1,1,0,0,0-2,0v3H8a1,1,0,0,0,0,2h3v3a1,1,0,0,0,2,0V13h3a1,1,0,0,0,0-2Z"></path></svg></div>
+
+                  <div onclick="makeEditable('editableText3')" style="font-size: 18px; display: flex; justify-content: center; align-items: center;  color: #949191; padding: 5px; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="edit" style=" width:16px;"><path fill="#c0c0c0" d="M3.5,24h15A3.51,3.51,0,0,0,22,20.487V12.95a1,1,0,0,0-2,0v7.537A1.508,1.508,0,0,1,18.5,22H3.5A1.508,1.508,0,0,1,2,20.487V5.513A1.508,1.508,0,0,1,3.5,4H11a1,1,0,0,0,0-2H3.5A3.51,3.51,0,0,0,0,5.513V20.487A3.51,3.51,0,0,0,3.5,24Z"></path><path fill="#c0c0c0" d="M9.455,10.544l-.789,3.614a1,1,0,0,0,.271.921,1.038,1.038,0,0,0,.92.269l3.606-.791a1,1,0,0,0,.494-.271l9.114-9.114a3,3,0,0,0,0-4.243,3.07,3.07,0,0,0-4.242,0l-9.1,9.123A1,1,0,0,0,9.455,10.544Zm10.788-8.2a1.022,1.022,0,0,1,1.414,0,1.009,1.009,0,0,1,0,1.413l-.707.707L19.536,3.05Zm-8.9,8.914,6.774-6.791,1.4,1.407-6.777,6.793-1.795.394Z"></path></svg></div>
+                </div>
+
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 15px; margin-bottom: 15px;">
+                <div style="font-size: 17px;">Delivery Address</div>
+                <div class="editableText3" style="font-size: 17px; display: flex; justify-content: center; align-items: center;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+              </div>
+
+            </div>
+
+            <div style="padding: 43px 50px 43px 50px; border: 1px solid #ccc; border-radius: 10px; background: rgb(151,133,209);
+            background: linear-gradient(182deg, rgb(128, 108, 194) 20%, rgb(154, 120, 255) 78%, rgba(224,224,224,1) 100%); color: white; display: flex; justify-content: space-between; align-items: center;">
+              
+              <div style="width: 80%;">
+                <div style="font-size: 25px; margin-bottom: 15px;">Add Delivery address in your profile</div>
+                <div style="font-size: 15px; padding-right: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+              </div>
+
+              <div style="font-size: 16px; display: flex; justify-content: center; align-items: center; background-color: hsla(0, 0%, 85%, 0.3) ;color: white; padding: 5px 20px 5px 20px; border-radius: 4px;margin-top: 25px; cursor: pointer;" onclick="activeSection('address_section', 'address_page')">Add</div>
+
+            </div>
+
+          </div>
+          <!-- PROFILE SECTION ENDS -->
+
+
+
+          <!-- <div
+            id="address_section"
+            class="xircls_content_here"
+            style="display: none"
+          >
+            <div class="header_font" style="font-size: 26px">Address</div>
+          </div> -->
+
+
+
+          <!-- ADDRESS AND BILLING SECTION STARTS -->
+          <div
+            id="address_section"
+            class="xircls_content_here"
+            style="display: none ; padding: 30px 40px 30px 40px; border: 1px solid #ccc; border-radius: 10px;">
+
+            <div class="header_font" style="font-size: 26px; margin-top: 25px; margin-bottom: 25px;">Add Address</div>
+
+
+            <div class="address_type_parent" style="display: flex; align-items: center; font-size: 18px;flex-wrap: wrap; ">
+
+              <div class="address_type" style="padding: 20px 30px 20px 30px; border-radius: 10px; border:1px #c0c0c0 solid; margin-bottom: 5px;" onclick="active_addr_type(this)">Home</div>
+
+              <div class="address_type" style="padding: 20px 30px 20px 30px; border-radius: 10px; border:1px #c0c0c0 solid; margin-bottom: 5px;" onclick="active_addr_type(this)">Work</div>
+
+              <div class="address_type" style="padding: 20px 30px 20px 30px; border-radius: 10px; border:1px #c0c0c0 solid; margin-bottom: 5px;" onclick="active_addr_type(this)">Hotel</div>
+
+              <div class="address_type" style="padding: 20px 30px 20px 30px; border-radius: 10px; border:1px #c0c0c0 solid; margin-bottom: 5px;" onclick="active_addr_type(this)">Other</div>
+
+            </div>
+
+            <div class="xircls_form" style=" margin-top :30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+
+              <div class="parent_form" style="width: 48%; margin-bottom: 20px">
+                <div class="xircls_label">Address Line 1</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Address Line 1"
+                />
+              </div>
+
+              <div class="parent_form" style="width: 48%; margin-bottom: 20px">
+                <div class="xircls_label">Address Line 2</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Address Line 2"
+                />
+              </div>
+
+              <div class="parent_form" style="width: 30%; margin-bottom: 20px">
+                <div class="xircls_label">Company</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Company"
+                />
+              </div>
+
+              <div class="parent_form" style="width: 30%; margin-bottom: 20px">
+                <div class="xircls_label">Postal/Zip Code</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Postal/Zip Code"
+                />
+              </div>
+
+              <div class="parent_form" style="width: 30%; margin-bottom: 20px">
+                <div class="xircls_label">Contact Number</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Contact Number"
+                />
+              </div>
+
+              <div class="parent_form" style="width: 30%; margin-bottom: 20px">
+                <div class="xircls_label">City</div>
+                <input class="xircls_inputs" type="text" placeholder="City" />
+              </div>
+
+              <div class="parent_form" style="width: 30%; margin-bottom: 20px">
+                <div class="xircls_label">Country</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Country"
+                />
+              </div>
+
+              <div class="parent_form" style="width: 30%; margin-bottom: 20px">
+                <div class="xircls_label">Province</div>
+                <input
+                  class="xircls_inputs"
+                  type="text"
+                  placeholder="Province"
+                />
+              </div>
+            </div>
+
+            <div
+              class="action"
+              style="
+                margin-top: 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <div
+                class="xircls_btn_style_secondary"
+                onclick="activeSection('address_section', 'address_page')"
+                style="border: 1px black solid;"
+              >
+                Back
+              </div>
+              <div class="xircls_btn_style">Save</div>
+            </div>
+          </div>
+          <!-- ADDRESS SECTION ENDS -->
+
+
+
+
+
+          <!-- ORDER SECTION STARTS -->
+          <div id="order_section" class="xircls_content_here" style="display: none ; padding: 15px; border: 1px solid #ccc; border-radius: 10px;">
+
+            <div class="header_font" style="font-size: 26px">
+              My Orders
+            </div>
+
+            <!-- card 1 starts -->
+            <div style="border: 1px solid #ccc; margin-top: 25px; padding-top: 20px; padding-bottom: 20px; padding-left: 30px; padding-right: 30px; border-radius: 10px;">
+              
+              <div class="price_tag" style="text-align: right; color: #afafaf; font-size: 20px;">Price</div>
+
+                <!-- card content starts -->
+                <div class="card_content" >
+
+                  <div style="width: 109px; height: 138px; background-color: #d4d4d4; border-radius: 8px;"></div>
+
+                  <div class="detail_parent">
+
+                    <div style="font-size: 25px; margin-bottom: 5px;">Lorem Ipsum dolor sit <span style="font-weight: 800;">+ 2 more</span></div>
+                    <div style="margin-bottom: 5px;">Quantity:4</div>
+                    <div style="margin-bottom: 5px;">Order to be delivered on <span style="color: #4DF892;">Thursday</span></div>
+
+                    <div class="buttons_parent" >
+
+                      <div id="view_items" onclick="toggle('view_items' , 'view_item_details')" class="three_buttons_vto" >View Items</div>
+
+                      <div id="track_order" onclick="toggle('track_order' , 'track_order_details')" class="three_buttons_vto">Track Order</div>
+
+                      <div id="order_details" onclick="toggle('order_details' ,'order_details_info' )" class="three_buttons_vto">Order Details</div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="price" style="font-weight: 700; font-size: 20px;">Rs 1299</div>
+
+                </div>
+                <!-- card content ends -->
+
+
+
+                <!-- View Items Info Starts -->
+                <div id="view_item_details" class="hide order_page_content">
+
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+
+                    <div class="view1_details">
+
+                      <div style="background-color: aquamarine; width:80px; height: 100px; border-radius: 8px;"></div>
+
+                      <div>
+                        <div class="text1_vid">Lorem ipsum dolor sit amet</div>
+                        <div class="text2_vid">Quantity: 1</div>
+                      </div>
+
+                    </div>
+
+                    <div class="text2_vid">
+                      Rs 500
+                    </div>
+
+                  </div>  
+                </div>
+                <!-- View Items Info Ends -->
+
+
+
+
+
+
+                <!-- Track Order Info Starts -->
+                <div id="track_order_details" class="hide order_page_content">
+
+                  <div style="margin-top: 20px; margin-bottom: 20px; font-size: 22px; font-weight: 600; letter-spacing: 0.1em;">Order Updates</div>
+
+                  <div class="tracking_progress_bar" style="background-color: #ffe453; height: 50px;  align-items: center; justify-content: space-between; padding: 10px; border-start-start-radius: 9999px; border-end-start-radius: 9999px;border-start-end-radius :9999px; border-end-end-radius: 9999px;  
+                  color: white; margin-top: 20px; margin-bottom: 5px;">
+                    
+                    <div style=" background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+                      <svg id="Layer_1" class="width" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><defs><style>.cls-1{fill-rule:evenodd;} .width{width:12px; margin:5px}</style></defs><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+                    </div>
+
+                    <div style=" background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+                      <svg id="Layer_1" class="width" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><defs><style>.cls-1{fill-rule:evenodd;} .width{width:12px; margin:5px}</style></defs><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+                    </div>
+
+                    <div style=" background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+                      <svg id="Layer_1" class="width" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><defs><style>.cls-1{fill-rule:evenodd;} .width{width:12px; margin:5px}</style></defs><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+                    </div>
+
+                    <div style=" background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+                      <svg id="Layer_1" class="width" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><defs><style>.cls-1{fill-rule:evenodd;} .width{width:12px; margin:5px}</style></defs><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+                    </div>
+
+                    <div style=" background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+                      <svg id="Layer_1" class="width" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><defs><style>.cls-1{fill-rule:evenodd;} .width{width:12px; margin:5px}</style></defs><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+                    </div>
+
+                  </div>
+
+                  <div class="tracking_progress_bar" style=" align-items: center; justify-content: space-between; padding: 5px; margin-bottom: 40px; text-align: center;">
+                    
+                    <div style="text-align: center;width: 30px;">
+                      <div style="font-size: 18px; font-weight: 800;">Ordered</div>
+                      <div>19/06/23</div>
+                      <div>17:32</div>
+                    </div>
+
+                    <div style="text-align: center;width: 30px;">
+                      <div style="font-size: 18px; font-weight: 800;">Ready</div>
+                      <div>20/06/23</div>
+                      <div>18:32</div>
+                    </div>
+
+                    <div style="text-align: center;width: 30px;">
+                      <div style="font-size: 18px; font-weight: 800;">Shipped</div>
+                      <div>20/06/23</div>
+                      <div>19:32</div>
+                    </div>
+
+                    <div style="text-align: center;width: 30px;">
+                      <div style="font-size: 18px; font-weight: 800;">Dispatched</div>
+                      <div>21/06/23</div>
+                      <div>12:32</div>
+                    </div>
+
+                    <div style="text-align: right;width: 30px;">
+                      <div style="font-size: 18px; font-weight: 800;">Estimated Delivery</div>
+                      <div>21/06/23</div>
+                      <div>15:32</div>
+                    </div>
+
+                  </div>
+
+                  <div style="font-size: 17px; width: 100%; display: flex; align-items: center; justify-content: space-evenly;">
+                      <table style="width: 100%;  border-collapse: collapse; border-spacing: 0px;">
+                        <tr style="background-color: #ccc; padding: 0px; border-radius: 10px;">
+                          <td style=" border: none; border-top-left-radius: 10px; border-bottom-left-radius: 14px;text-align: left;">Date</th>
+                          <td style=" border: none; text-align: center;">Location</th>
+                          <td style=" border: none; border-top-right-radius: 10px; border-bottom-right-radius: 14px;text-align: right;">Event</th>
+                          
+                        </tr>
+
+                        <tr class="table_rest" style="padding: 20px; ">
+                          <td style="text-align: left;">20/06/17 - 17:32</td>
+                          <td style="text-align: center;">Roma, IT</td>
+                          <td style="text-align: right;">
+                            <div style="font-weight: 800;">Shipped</div>
+                            <div>Carrier: TNT</div>
+                            <div>Tracking No.: F847368394756</div>
+                          </td>
+                        </tr>
+
+                        <tr class="table_rest" style="padding: 20px; ">
+                          <td style="text-align: left;">20/06/17 - 18:32</td>
+                          <td style="text-align: center;">Roma, IT</td>
+                          <td style="text-align: right;">
+                            <div style="font-weight: 800;">Ready</div>
+                            <div>Waiting for Carrier</div>
+                          </td>
+                        </tr>
+
+                        <tr class="table_rest" style="padding: 20px; ">
+                          <td style="text-align: left;">19/06/17 - 17:32</td>
+                          <td style="text-align: center;"></td>
+                          <td style="text-align: right;">
+                            <div style="font-weight: 800;">Ordered</div>
+                          </td>
+                        </tr>
+
+                      </table>
+                  </div>
+                  
+                </div>
+                <!-- Track Order Info Ends -->
+
+
+
+
+
+
+                <!-- Order Details Info Starts -->
+                <div id="order_details_info" class="hide order_page_content">
+
+                  <div style="align-items: center; justify-content: center; display: block;">
+                    
+                    <div class="details_within">
+                      <div style="font-weight: 700;">Order Number</div>
+                      <div>8e0921</div>
+                    </div>
+
+                    <div class="details_within">
+                      <div style="font-weight: 700;">Grand Total</div>
+                      <div>Rs 1299</div>
+                    </div>
+
+                    <div class="details_within">
+                      <div style="font-weight: 700;">Discount</div>
+                      <div>Rs 400</div>
+                    </div>
+
+                    <div class="details_within">
+                      <div style="font-weight: 700;">Delivery Address</div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipiscing</div>
+                    </div>
+
+                    <div class="details_within">
+                      <div style="font-weight: 700;">Billing Address</div>
+                      <div>Same as Delivery Address</div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px; margin-left: 10px; margin-top: 40px;">
+                      <div style="background-color: #FFB8B8; color: white; padding: 15px 20px 15px 20px; border-radius: 10px; cursor: pointer;">Cancel Order</div>
+                      <div style="background-color: #F2F2F2; color: #4b4b4b; padding: 15px 20px 15px 20px; border-radius: 10px; cursor: pointer;">Change Address</div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Order Details Info Ends -->
+
+            </div>
+            <!-- card 1 ends -->
+
+          </div>
+          <!-- ORDER SECTION ENDS -->
+
+
+
+
+
+
+          <!-- CREDIT SECTION STARTS -->
+          <div id="credit_section" class="xircls_content_here" style="display: none ; width: 100%;">
+
+            <div class="credit_section_hero_parent" style=" display: flex; gap:20px;">
+
+              <div class="credit_section_hero">
+
+                <img src="credit_page_graph.png" alt="credit" style="border-radius: 10px;" class="credit_page_graph">
+
+                <div style="color: white;">
+                    
+                    <div style="font-weight: 200;">Current Credit</div>
+                    
+                    <div class="text1_credit_section">
+                      Rs 500 <div class="text2_credit_section" style=" margin-top: 15px; margin-left: 12px; color: #4df892;">+100</div>
+                    </div>
+
+                    <div style="color: #bababa; font-weight: 100;">Save Money through Rewards</div>
+
+                </div>
+
+              </div>
+
+              <div class="credit_section_hero_right" style="height: 100%;">
+                <div style="border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px; padding: 20px; display: flex; gap: 20px;">
+                  <div style="width: 15px; height: 15px; background-color: #4DF892; border-radius: 50%; "></div>
+
+                  <div>
+                    <div class="right_card_text1_credit" style="font-weight: 500; ">Earned Credit</div>
+                    <div class="right_card_text2_credit" style=" font-weight: 800; margin-top: 10px;">Rs 100</div>
+                  </div>
+
+                </div>
+                
+                <div style="border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px; padding: 20px; display: flex; gap: 20px;">
+                  
+                  <div style="width: 15px; height: 15px; background-color: #0812FF; border-radius: 50%; "></div>
+
+                  <div>
+                    <div style="font-weight: 500; font-size: 18px;">Spent Credit</div>
+                    <div style="font-size: 25px; font-weight: 800; margin-top: 10px;">Rs 100</div>
+                  </div>
+
+                </div>
+                
+                <div style="border: 1px solid #ccc; border-radius: 10px;  padding: 20px; display: flex; align-items: center; justify-content: space-between;">
+                    <div style="font-size: 18px;cursor: pointer;">Earn More Credits</div>
+                    <img src="right_arrow.png" alt="open arrow">
+                </div>  
+              </div>
+
+            </div>
+
+            <div style="margin-top: 20px; margin-bottom: 20px; font-size: 18px; font-weight: 600; letter-spacing: 0.1em;">Recent Transaction</div>
+
+            <div style="font-size: 20px; width: 100%; display: flex; align-items: center; justify-content: space-evenly;">
+                <table style="width: 100%;  border-collapse: collapse; border-spacing: 0px;">
+                  <tr style="background-color: #ccc; padding: 0px; border-radius: 10px;">
+                    <td style=" border: none; border-top-left-radius: 10px; border-bottom-left-radius: 14px;">Date</th>
+                    <td style=" border: none;">Reason</th>
+                    <td style=" border: none;">CR/DR</th>
+                    <td style=" border: none; border-top-right-radius: 10px; border-bottom-right-radius: 14px;">Balance</th>
+                  </tr>
+
+                  <tr class="table_rest" style="padding: 20px; ">
+                    <td>02-04-2023</td>
+                    <td>Sign-up Credits</td>
+                    <td>Rs 5</td>
+                    <td>Rs 5</td>
+                  </tr>
+
+                </table>
+            </div>
+
+          </div>
+          <!-- CREDIT SECTION ENDS -->
+
+
+
+
+
+
+          <!-- OFFER SECTION STARTS -->
+          <div id="offer_section" class="xircls_content_here" style="display: none ; padding: 40px 50px 40px 50px; border: 1px solid #ccc; border-radius: 10px;">
+
+            <div class="header_font" style="font-size: 26px">Offers</div>
+
+            <!-- row 1 -->
+            <div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; margin-bottom: 15px;">
+                <div style="color: #6b6b6b; font-weight: 500; letter-spacing: 0.05em;">How to earn credits</div>
+                <div style="font-weight: 500;">Current Credit 
+                  <span style="font-weight: 900; font-size: 20px;">Rs 500</span></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+                
+                <!-- card 1 -->
+                <div style="padding: 20px;  border: 1px #ccc solid; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 230px; height: 190px; border-radius: 10px; margin-bottom: 10px;" >
+                  <div style="font-size:25px; margin-bottom: 10px;text-align: center;">Offer one</div>
+                  <div style="color:#6b6b6b; font-size: 16px; text-align: center; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                  <div style="background-color: #ccc; color: #6b6b6b; font-size: 18px; width: 110px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 6px; cursor: pointer;">Unlock</div>
+                </div>
+
+                <!-- card 2 -->
+                <div style="padding: 20px;  border: 1px #ccc solid; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 230px; height: 190px; border-radius: 10px; margin-bottom: 10px;" >
+                  <div style="font-size:25px; margin-bottom: 10px;text-align: center;">Offer one</div>
+                  <div style="color:#6b6b6b; font-size: 16px; text-align: center; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                  <div style="background-color: #ccc; color: #6b6b6b; font-size: 18px; width: 110px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 6px; cursor: pointer;">Unlock</div>
+                </div>
+
+                <!-- card 3 -->
+                <div style="padding: 20px;  border: 1px #ccc solid; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 230px; height: 190px; border-radius: 10px; margin-bottom: 10px;" >
+                  <div style="font-size:25px; margin-bottom: 10px;text-align: center;">Offer one</div>
+                  <div style="color:#6b6b6b; font-size: 16px; text-align: center; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                  <div style="background-color: #ccc; color: #6b6b6b; font-size: 18px; width: 110px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 6px; cursor: pointer;">Unlock</div>
+                </div>
+              
+              </div>
+
+
+            </div>
+
+            <!-- row 2 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 25px; margin-bottom: 15px;">
+                <div style="color: #6b6b6b; font-weight: 500; letter-spacing: 0.05em;">How to save on your purchase</div>
+                <div style="font-weight: 500;">Current Cart value
+                  <span style="font-weight: 900; font-size: 20px;">Rs 600</span></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-evenly;flex-wrap: wrap;">
+                
+                <!-- card 1 -->
+                <div style="padding: 20px;  border: 1px #ccc solid; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 230px; height: 190px; border-radius: 10px; margin-bottom: 10px;" >
+                  <div style="font-size:25px; margin-bottom: 10px;text-align: center;">10% off on purchase</div>
+                  <div style="color:#6b6b6b; font-size: 16px; text-align: center; margin-bottom: 15px;">For cart value between 1-1000 Rs</div>
+                  <div style="background-color: #4df892; color: white; font-size: 18px; width: 110px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 6px; cursor: pointer;">Active</div>
+                </div>
+
+                <!-- card 2 -->
+                <div style="padding: 20px;  border: 1px #ccc solid; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 230px; height: 190px; border-radius: 10px; margin-bottom: 10px;" >
+                  <div style="font-size:25px; margin-bottom: 10px;text-align: center;">Offer one</div>
+                  <div style="color:#6b6b6b; font-size: 16px; text-align: center; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                  <div style="background-color: #ccc; color: #6b6b6b; font-size: 18px; width: 110px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 6px; cursor: pointer;">Unlock</div>
+                </div>
+
+                <!-- card 3 -->
+                <div style="padding: 20px;  border: 1px #ccc solid; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 230px; height: 190px; border-radius: 10px; margin-bottom: 10px;" >
+                  <div style="font-size:25px; margin-bottom: 10px;">Offer one</div>
+                  <div style="color:#6b6b6b; font-size: 16px; text-align: center; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                  <div style="background-color: #ccc; color: #6b6b6b; font-size: 18px; width: 110px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 6px; cursor: pointer;">Unlock</div>
+                </div>
+              
+              </div>
+
+            </div>
+
+          </div>
+          <!-- OFFER SECTION ENDS -->
+
+
+
+
+
+          <!-- WISHLIST SECTION STARTS -->
+          <div id="wishlist_section" class="xircls_content_here" style="display: none; padding: 40px 50px 40px 50px; border: 1px solid #ccc; border-radius: 10px;">
+            
+            <div style="display: flex; align-items: center; gap: 40px; margin-bottom: 30px; padding: 25px; border: 1px #c0c0c0 solid; border-radius: 10px;">
+              <div style="font-size: 20px;">1 item added to cart</div>
+              <div style="background-color: #cfcece; padding: 10px 20px 10px 20px; border-radius: 10px; color: white; cursor: pointer;">Continue Buying</div>
+            </div>
+
+            <div class="header_font" style="font-size: 26px">Wishlist</div>
+
+            <div class="xircls_section xircls_wishlist_section_div xircls_recently_section_div" style=" width: 100%; display: flex;  gap: 30px; align-items: center; margin-top: 30px; flex-wrap: wrap; border-bottom: 1px #c0c0c0 solid; padding-bottom: 25px;">
+
+              <!-- item card for wishlist-item -->
+              <div style="height: 280px; width: 210px; display: flex; justify-content: center ;align-items: center; flex-direction: column">
+
+                  <!-- product image -->
+                  <div style="height: 150px; width: 200px;  background-color: #faaaa1; margin-bottom: 10px;">
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 10px;">
+                    <div style="font-size: 14px;">Lorem ipsum dol</div>
+                    <div style="font-weight: 800;">Rs 1299</div>
+                  </div>
+
+                  <div style="display: flex; width: 100%; gap: 10px;margin-bottom: 10px;">
+
+                    <div style="width: 60%; display: flex; justify-content: center; align-items: center; margin-left: 5px;">
+                      <select name="" id="" style="width: 100%; height: 30px; border-radius: 8px; padding: 5px;">
+                        <option value="Blue/S">Blue/S</option>
+                        <option value="Blue/S">Blue/S</option>
+                      </select>
+                    </div>
+
+                    <div style="display: flex; width: 40%; justify-content: space-evenly; align-items: center; border: 1px #c0c0c0 solid; border-radius: 8px; background-color: #ebebeb;margin-right: 5px;">
+                      <div style=" width: 20px; text-align: center; cursor: pointer;" onclick="countDown()">-</div>
+                      <div class="item_counter_wishlist" style="font-size: 12px;">0</div>
+                      <div style=" width: 20px; text-align: center;cursor: pointer;" onclick="countUp()">+</div>
+                    </div>
+                  </div>
+
+                  <div style="color: white; background-color: black; width: 98%; text-align: center; font-size: 15px; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; margin-top: 8px; cursor: pointer;">Add to cart</div>
+
+              </div>
+              <!-- item card ends -->
+
+              
+
+            </div>
+
+          </div>
+          <!-- WISHLIST SECTION ENDS -->
+
+
+
+          <!-- RECENTS SECTION ENDS -->
+          <div id="recently_section" class="xircls_content_here" style="display: none; padding: 40px 50px 40px 50px; border: 1px solid #ccc; border-radius: 10px;">
+
+            <div class="header_font" style="font-size: 26px">
+              Recently Viewed
+            </div>
+
+            <div class="xircls_section xircls_recently_section_div" style=" width: 100%; display: flex;  gap: 30px; align-items: center; margin-top: 30px; flex-wrap: wrap;">
+
+                <!-- card for product under recently viewed -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px #c0c0c0 solid; width: 180px; height: 250px; border-radius: 10px;">
+                    
+                  <div style="height: 110px; width: 90px; background-color: #c0c0c0;border-radius: 10px;"></div>
+
+                  <div style="font-size: 17px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Lorem ipsum dolor sit</div>
+                  <div style="font-size: 14px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Rs 1299</div>
+
+                  <div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+                    <input type="text" name="" id="" style="width: 50%; height: 20px;">
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center; cursor: pointer;" onclick="countDown()">-</div>
+                    <div class="item_counter" style="font-size: 12px;">0</div>
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center;cursor: pointer;" onclick="countUp()">+</div>
+                  </div>
+
+                  <div style="color: white; background-color: black; width: 92%; text-align: center; font-size: 12px; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; margin-top: 8px; cursor: pointer;">Add to cart</div>
+
+                </div>
+                <!-- card for product ends -->
+
+                <!-- card for product under recently viewed -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px #c0c0c0 solid; width: 180px; height: 250px; border-radius: 10px;">
+                    
+                  <div style="height: 110px; width: 90px; background-color: #c0c0c0;border-radius: 10px;"></div>
+
+                  <div style="font-size: 17px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Lorem ipsum dolor sit</div>
+                  <div style="font-size: 14px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Rs 1299</div>
+
+                  <div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+                    <input type="text" name="" id="" style="width: 50%; height: 20px;">
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center; cursor: pointer;" onclick="countDown()">-</div>
+                    <div class="item_counter" style="font-size: 12px;">0</div>
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center;cursor: pointer;" onclick="countUp()">+</div>
+                  </div>
+
+                  <div style="color: white; background-color: black; width: 92%; text-align: center; font-size: 12px; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; margin-top: 8px; cursor: pointer;">Add to cart</div>
+
+                </div>
+                <!-- card for product ends -->
+
+                <!-- card for product under recently viewed -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px #c0c0c0 solid; width: 180px; height: 250px; border-radius: 10px;">
+                    
+                  <div style="height: 110px; width: 90px; background-color: #c0c0c0;border-radius: 10px;"></div>
+
+                  <div style="font-size: 17px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Lorem ipsum dolor sit</div>
+                  <div style="font-size: 14px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Rs 1299</div>
+
+                  <div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+                    <input type="text" name="" id="" style="width: 50%; height: 20px;">
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center; cursor: pointer;" onclick="countDown()">-</div>
+                    <div class="item_counter" style="font-size: 12px;">0</div>
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center;cursor: pointer;" onclick="countUp()">+</div>
+                  </div>
+
+                  <div style="color: white; background-color: black; width: 92%; text-align: center; font-size: 12px; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; margin-top: 8px; cursor: pointer;">Add to cart</div>
+
+                </div>
+                <!-- card for product ends -->
+
+                <!-- card for product under recently viewed -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px #c0c0c0 solid; width: 180px; height: 250px; border-radius: 10px;">
+                    
+                  <div style="height: 110px; width: 90px; background-color: #c0c0c0;border-radius: 10px;"></div>
+
+                  <div style="font-size: 17px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Lorem ipsum dolor sit</div>
+                  <div style="font-size: 14px; font-weight: 700; margin-top: 5px; margin-bottom: 5px;">Rs 1299</div>
+
+                  <div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+                    <input type="text" name="" id="" style="width: 50%; height: 20px;">
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center; cursor: pointer;" onclick="countDown()">-</div>
+                    <div class="item_counter" style="font-size: 12px;">0</div>
+                    <div style="background-color: #c0c0c0; width: 20px; text-align: center;cursor: pointer;" onclick="countUp()">+</div>
+                  </div>
+
+                  <div style="color: white; background-color: black; width: 92%; text-align: center; font-size: 12px; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; margin-top: 8px; cursor: pointer;">Add to cart</div>
+
+                </div>
+                <!-- card for product ends -->
+                
+            </div>
+
+          </div>
+          <!-- RECENTS SECTION ENDS -->
+
+
+
+          <!-- RESET PASSWORD SECTION STARTS -->
+          <div id="reset_section" class="xircls_content_here" style="display: none; padding: 40px 50px 40px 50px; border: 1px solid #ccc; border-radius: 10px;">
+
+            <div class="header_font" style="font-size: 26px">
+              Reset Password
+            </div>
+
+            <!-- main box -->
+            <div class="main_box_privacy_content" style="margin-top: 35px;">  
+
+              <!-- left side -->
+              <div class="left_privacy_content">
+
+                <img src="lock-icon-big.png" alt="lock icon" style="width: 100px;">
+                <div >
+                  <div style="text-align: center; font-size: 18px;">Update you password for</div>
+                  <div style="text-align: center; font-size: 15px; font-weight: 800;">mail@mail.mail</div>
+                </div>
+
+              </div>
+
+
+              <!-- right side -->
+              <div class="right_privacy_content">
+
+                <div style="font-size: 30px;text-align: center; margin-bottom: 40px;">Change password</div>
+
+                <div style="display: flex; align-items: center; justify-content:flex-start; width: 80%;">New Password</div>
+                <input type="password" name="" id="" style="width: 78%; height: 30px; border-radius: 7px; border:2px #c0c0c0 solid; padding-left: 10px;"  placeholder="ABCDEFS">
+
+                <div style="display: flex; align-items: center; justify-content:flex-start; width: 80%; margin-top: 20px;">Confirm new passowrd</div>
+                <input type="password" style="width: 78%; height: 30px; border-radius: 7px; border:2px #c0c0c0 solid; padding-left: 10px;" placeholder="ABCDEFS">
+
+                <div style="background-color: black; color: white; font-size:14px; padding-top: 10px; padding-bottom: 10px; width: 80%; border-radius: 7px; text-align: center; margin-top: 40px; cursor: pointer;">Update password</div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- RESET PASSWORD SECTION ENDS-->
+
+
+
+
+        </div>
+        <!-- MIDDLE COMPONENT ENDS -->
+
+
+
+
+
+        
+
+        <!-- commented just in case for future use -->
+        <!-- RIGHT COMPONENT STARTS -->
+        <!-- <div class="xircls_right_section">
+            
+            <div style="padding:10px;  border: 1px solid #ccc; border-radius: 10px; margin-bottom: 20px">
+              <div style="width: 100%; background-image: url('right_comp_back_1.png');background-repeat: no-repeat;background-size: cover; background-color: #ccc;  display: flex; justify-content: center; align-items: center; padding-top: 30px; padding-bottom: 30px; border-radius: 10px;"><img src="rupee.png" alt="rupee" style="width: 24px; height: 33px;"></div>
+
+              <div style="font-size: 25px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">How to earn?</div>
+
+              <div style="font-size: 18px; margin-left: 10px; margin-bottom: 5px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+
+            </div>
+
+            <div style="padding:10px;  border: 1px solid #ccc; border-radius: 10px; margin-bottom: 20px">
+              <div style="width: 100%; background-image: url('right_comp_back_2.png');background-repeat: no-repeat;background-size: cover; background-color: #ccc;  display: flex; justify-content: center; align-items: center; padding-top: 30px; padding-bottom: 30px; border-radius: 10px;"><img src="shopping_Cart.png" alt="rupee" style="width: 38px; height: 43px;"></div>
+
+              <div style="font-size: 25px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">How to spend?</div>
+
+              <div style="font-size: 18px; margin-left: 10px; margin-bottom: 5px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+
+            </div>
+
+            <div style="padding:10px;  border: 1px solid #ccc; border-radius: 10px; margin-bottom: 20px">
+              <div style="width: 100%; background-image: url('right_comp_back_3.png');background-repeat: no-repeat;background-size: cover; background-color: #ccc;  display: flex; justify-content: center; align-items: center; padding-top: 30px; padding-bottom: 30px; border-radius: 10px;"><img src="refer_earn.png" alt="rupee" style="width: 37px; height: 37px;"></div>
+
+              <div style="font-size: 25px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">Refer to earn</div>
+
+              <div style="font-size: 18px; margin-left: 10px; margin-bottom: 5px;">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+
+            </div>
+
+
+        </div> -->
+        <!-- RIGHT COMPONENT ENDS -->
+
+
+      </div>
+
+    </div>
+
+  </body>
+
+  <script>
+    var list = [];
+    console.log(list, "list1");
+
+    console.log("Update 2");
+    var current_url = window.location.href; //  clearing and adding new innerHTML in  MainContent("ID hai...")
+
+    function activeSection(section, activeBox) {
+      console.log(section, activeBox);
+      var box_list = document.querySelectorAll(".xircls_content_here");
+      var box_section = document.querySelectorAll(".xircls_box_section");
+      console.log(box_list);
+      console.log(box_section);
+
+      box_list.forEach((cur) => {
+        cur.style.display = "none";
+      });
+
+      box_section.forEach((cur) => {
+        cur.classList.remove("account_active");
+      });
+
+      document.querySelector(`#${section}`).style.display = "";
+      document.querySelector(`#${activeBox}`).classList.add("account_active");
+
+      // if (section === "wishlist_section") {
+      //   appendWishlist()
+      // } else if (section === "recently_section") {
+      //   appendRecently()
+      // }
+    }
+
+    const counter = document.querySelector('.item_counter')
+
+    count = 0
+    function countUp(){
+      if(count>=0){
+      count = count + 1;
+      counter.innerHTML = count
+      }
+    }
+    function countDown(){
+      if(count>0){
+      count = count - 1;
+      counter.innerHTML = count
+      }
+    }
+
+    // function for the order page toggle button
+    function toggle(button, page) {
+      const targetElement = document.getElementById(page);
+
+      const allDivisions = document.querySelectorAll(".order_page_content");
+
+        // Hide all other divisions except the target element
+        allDivisions.forEach((division) => {
+          if (division !== targetElement) {
+            division.classList.add('hide');
+          }
+        });
+
+
+      targetElement.classList.toggle('hide');
+    }
+
+  /////// function to make text editable on the profile page
+    function makeEditable(className) {
+      const textElements = document.getElementsByClassName(className);
+
+      // Check if any of the text elements are already editable
+      let isAnyEditable = false;
+      for (const element of textElements) {
+        if (element.contentEditable === "true") {
+          isAnyEditable = true;
+          break;
+        }
+      }
+
+      if (!isAnyEditable) {
+        // Make all text elements with the specified class editable
+        for (const element of textElements) {
+          element.contentEditable = "true";
+          element.focus(); // Focus on each input field for easy editing
+        }
+      } else {
+        // Disable editing for all text elements and update the text
+        for (const element of textElements) {
+          element.contentEditable = "false";
+          const newText = element.textContent;
+          // storing the new text
+        }
+      }
+
+    }
+  //////////////////////////////////////////////////////////////////
+
+  //css tag for active address type - address_type_select
+  function active_addr_type(element){
+
+    const addTypes = document.getElementsByClassName('address_type');
+    for (let i = 0; i < addTypes.length; i++) {
+      addTypes[i].classList.remove('address_type_select');
+    }
+
+    element.classList.add('address_type_select');
+  }
+
+  </script>
+</html>

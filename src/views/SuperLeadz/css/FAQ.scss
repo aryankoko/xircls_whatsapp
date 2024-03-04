@@ -1,0 +1,17 @@
+.theme-white {
+    * {
+        background-color: #ffffff !important;
+    }
+    .accordion-button {
+        &:not(.collapsed) {
+            &::after {
+                background-image: url("https://img.icons8.com/material-outlined/24/minus.png");
+            }
+        }
+        &::after {
+            content: "";
+            background-image: url("https://img.icons8.com/material-outlined/24/plus-math--v1.png");
+            background-repeat: no-repeat;
+        }
+    }
+}

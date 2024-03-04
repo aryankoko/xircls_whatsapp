@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "NoirPro-Regular";
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot");
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff") format("woff"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.svg#NoirPro-Regular") format("svg");
+}
+/* .plugin *{
+    font-family: "NoirPro-Regular" ;
+} */
+
+.plugin a:hover{
+    color: #6e6b7b;
+}
+
+.plugin .head-list{
+    color: #6e6b7b;
+    padding: 0.61rem 1.2rem;
+}
+
+.plugin .list-div li a {
+    border-bottom: 3.5px solid #7367f0;
+    color: #7367f0;
+}
+
+.plugin .active {
+    /* color: #7367f0 !important; */
+    border-bottom: 3px solid #7367f0;
+    padding-bottom: 0.25rem !important;
+}
+
+.plugin .css-1s2u09g-control {
+    border: 1px solid #d8d6de !important;
+    cursor: pointer !important;
+}
+
+.plugin .css-1s2u09g-control:hover {
+    border: 1px solid #d8d6de !important;
+}
+
+.plugin .css-1pahdxg-control {
+    border-color: #7367f0 !important;
+    box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1) !important;
+}
+
+.plugin .css-1okebmr-indicatorSeparator {
+    display: none;
+}
+
+.plugin .css-tj5bde-Svg {
+    height: 15px !important;
+    color: #d8d6de !important;
+}
+
+.plugin .css-qc6sy-singleValue {
+    color: var(--secondary);
+}
+
+.plugin .transitionRow *{
+    /* transition: 0.375s cubic-bezier(.61,-0.23,.39,1.34) !important; */
+    transition: 0.3s ease !important;
+}
+.plugin .table > :not(caption) > * > * {
+	padding: 0.72rem 1rem !important;
+}
+.plugin .ql-align-center{
+	text-align: center !important;
+}
+.plugin .ql-align-right{
+	text-align: end !important;
+}
+.plugin .ql-align-justify{
+	text-align:justify !important;
+}
+.plugin .placeholder-list li{
+    cursor: pointer;
+}
+.plugin .placeholder-list li::before{
+    content: '- ';
+}
+
+.plugin .default-dis *{
+    font-family: sans-serif;
+    color: black;
+
+}
+.plugin .ql-font-serif{
+    font-family: 'serif' !important;
+
+}
+.plugin .ql-font-monospace{
+    font-family: 'monospace' !important;
+
+}
+.plugin .ql-size-huge{
+    font-size: 2.5rem !important;
+
+}
+.plugin .ql-size-large {
+	font-size: 1.5rem !important;
+}
+.plugin .ql-size-small {
+	font-size: 0.75rem !important;
+}
+
+.ellipsis{
+    position: relative;
+}
+
+.ellipsis span {
+	position: absolute;
+	left: 10%;
+	right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

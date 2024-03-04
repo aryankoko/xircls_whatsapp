@@ -1,0 +1,12 @@
+.SubscriptionNav.active {
+	color: #7367f0;
+    background-color: #ffffff;
+    /* box-shadow: 0 4px 18px -4px rgba(115, 103, 240, 0.65); */
+    outline: 1px solid #7367f0;
+}
+
+.SubscriptionNav{
+    padding: 0.786rem 1.5rem;
+    border-radius: 0.358rem;
+    color: #625f6e;
+}

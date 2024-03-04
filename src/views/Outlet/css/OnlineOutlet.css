@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Arima:wght@100;200;300;400;500;600;700&family=BIZ+UDPGothic:wght@400;700&family=Battambang:wght@100;300;400;700;900&family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Finlandica:wght@400;500;600;700&family=Gentium+Plus:wght@400;700&family=Mako&family=Meera+Inimai&family=Orienta&display=swap');
+@import url(//db.onlinewebfonts.com/c/ff194d14f11197a37610711ef9f788ff?family=NoirPro-Regular);
+
+.online-outlet * {
+    /* font-family: 'Alata', sans-serif; */
+
+    /* font-family: 'Arima', cursive; */
+
+    /* font-family: 'Battambang', cursive; */
+
+    /* font-family: 'BIZ UDPGothic', sans-serif; */
+
+    /* font-family: 'Charis SIL', serif; */
+
+    /* font-family: 'Finlandica', sans-serif; */
+
+    /* font-family: 'Gentium Plus', serif; */
+
+    /* font-family: 'Mako', sans-serif; */
+
+    /* font-family: 'Meera Inimai', sans-serif; */
+
+    /* font-family: 'Orienta', sans-serif; */
+
+    font-family: 'NoirPro-Regular', Lato;
+}
+
+.online-outlet .active {
+    color: #7367f0 !important;
+    border-bottom: 3px solid #7367f0;
+    padding-bottom: 0.25rem !important;
+    font-weight: bold;
+}
+
+.online-outlet .css-1s2u09g-control {
+    border: 1px solid #d8d6de !important;
+    cursor: pointer !important;
+}
+
+.online-outlet .css-1s2u09g-control:hover {
+    border: 1px solid #d8d6de !important;
+}
+
+.online-outlet .css-1pahdxg-control {
+    border-color: #7367f0 !important;
+    box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1) !important;
+}
+
+.online-outlet .css-1okebmr-indicatorSeparator {
+    display: none;
+}
+
+.online-outlet .css-tj5bde-Svg {
+    height: 15px !important;
+    color: #d8d6de !important;
+}
+
+.online-outlet .css-qc6sy-singleValue {
+    color: var(--secondary);
+}
+
+
+.outlet_edit .card-button{
+    border-radius: 500px !important;
+    width: 75%;
+    margin: 0 auto;
+    background-color: #7367f0 !important;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s ease;
+    
+}
+
+.outlet_edit .card-button h5{
+    color: white;
+}
+
+.outlet_edit .card-button:hover{
+    background-color: #5e50ee !important;
+    transition: 0.25s ease;
+}
+
+.outlet_edit #arrowMove{
+    transition: 0.25s ease;
+}
+.outlet_edit .card-button:hover #arrowMove{
+    transform: scaleX(150%) translateX(30%);
+}
+
+.outlet_edit .btn-intrested{
+    color: white !important;
+    background-color: #4889fd !important;
+    border-color: #4889fd !important;
+    margin-right: 1rem;
+    padding: 10px 45px 10px 45px;
+    border: 1px solid #4889fd;
+    border-radius: 0.3rem;  
+}
+
+.outlet_edit .btn-intrested:hover{
+    background-color: #1F75FE !important;
+    border-color: #1F75FE !important;
+    transition-duration: 0.4s;
+}
+
+.outlet_edit .btn-shortlist{
+    color: #787878 !important;
+    background-color: white !important;
+    border-color: #787878 !important;
+    margin-right: 1rem;
+    padding: 10px 45px 10px 45px;
+    border: 1px solid #787878;
+    border-radius: 0.3rem; 
+}
+
+.outlet_edit .btn-shortlist:hover{
+    background-color: #E8E8E8 !important;
+    color: #303030 !important;
+    border-color: #303030 !important;
+}

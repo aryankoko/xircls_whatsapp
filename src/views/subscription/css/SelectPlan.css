@@ -1,0 +1,29 @@
+
+.cmstrat  *{
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    transition: 0s !important;
+}
+.cmstrat .borderAdd{
+    border : 2px solid #19d895;
+    transform: translateY(-1%);
+}
+.cmstrat .borderAdd button{
+    background-color : #19d895 !important;
+}
+.cmstrat .card.borderAdd::before{
+    content: url('../../images/WhatsApp\ Image\ 2022-11-04\ at\ 1.02.24\ PM.jpeg');
+    position: absolute;
+    scale : 0.15;
+    top: -82.5px;
+    left: -82.5px;
+    border-radius: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: 175px;
+}
+
+

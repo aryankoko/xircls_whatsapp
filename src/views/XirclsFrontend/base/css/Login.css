@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+#f-password {
+    font-size: small !important;
+}
+
+#f-password:hover {
+    color: #222;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+.login * {
+    font-family: source sans pro !important;
+    line-height: 1.5 !important;
+}
+
+.xircls_front_base {
+    background-color: #fff;
+}
+
+.login h3 {
+    font-size: 36px;
+    color: #464646;
+}
+
+.login input {
+    color: #464646;
+    padding: 0.75rem;
+}
+.login input::placeholder {
+
+    font-size: 16px !important;
+    padding: 0.75rem;
+}
+
+.login label {
+    font-size: 16px !important;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #555;
+}
+
+#login-btn {
+    background-color: #111111;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+}

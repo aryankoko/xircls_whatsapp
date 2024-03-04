@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Colaborate';
+    src: url("./@core/assets/fonts/Colaborate/ColabReg.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nav-item .menu-item,
+.nav-item .menu-title {
+    text-transform: uppercase;
+}
+
+body > iframe{
+    pointer-events: none;
+  }

@@ -1,0 +1,15 @@
+.acc-header button {
+    background-color: #f8f8f8;
+}
+
+.accordion .accordion-item:not(:last-of-type) {
+    border-bottom: none;
+} 
+
+.mosaic {
+    cursor: 'pointer';
+}
+
+.mosaic .selected {
+    fill: #ed5a29;
+}

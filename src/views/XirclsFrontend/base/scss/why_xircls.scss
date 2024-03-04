@@ -1,0 +1,40 @@
+.why_xircls{
+    .p{
+        font-size: 19px !important; 
+    }
+    h6{
+        line-height: 1.6;
+    }
+
+    @media (max-width: 450px) {
+        .style-msg2 .sb-msg{
+            padding: 15px 5px 15px 5px;
+        }
+
+        .style-msg2 ul{
+            margin: 0px 0px 0px 15px;
+        }
+    }
+
+    @media (max-width: 998px) {
+        .reverser{
+            flex-direction: column-reverse;
+        }
+
+        .col-padding{
+            padding:2rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .col-padding{
+            padding: 1rem;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .col-padding{
+            padding: 0.2rem;
+        }
+    }
+}

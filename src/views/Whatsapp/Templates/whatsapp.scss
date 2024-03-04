@@ -1,0 +1,15 @@
+.whatsapp_template_card {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+
+  &::before {
+     
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      border: 10px solid transparent;
+      border-top: 10px solid #fff;
+
+  }
+}

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "NoirPro-Regular";
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot");
+    src: url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.woff") format("woff"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ff194d14f11197a37610711ef9f788ff.svg#NoirPro-Regular") format("svg");
+}
+
+.progress-page * {
+    font-family: 'NoirPro-Regular', Lato;
+}
+
+.progress-page .accordion-button::after {
+	background-image: none !important;
+}
+
+.progress-page .accordion-header {
+	padding: 1.5rem 1rem !important;
+}
+.progress-page .accordion-body, .progress-page .accordion-button{
+	padding: 0px !important;
+}

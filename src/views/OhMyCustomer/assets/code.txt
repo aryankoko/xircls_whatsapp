@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+    @font-face {
+      font-family: 'Tw Cen Mt';
+      src: url('https://www.demo.xircls.in/static/fonts/Tw Cen MT.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .xircls_account_parent {
+      font-family: Tw Cen Mt !important;
+    }
+
+    .main_font {
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .xircls_account_parent a {
+      font-size: 16px !important;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+      font-weight: 400;
+    }
+
+    .account_active {
+      background: #e2e2e2;
+    }
+
+    .header_font {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .xircls_account_parent .xircls_inputs {
+      height: 35px;
+      border-radius: 5px;
+      border: 1px solid #ccc !important;
+      padding: 0px 8px;
+      margin-top: 2px;
+      width: 100%;
+    }
+
+    .xircls_account_parent .xircls_label {
+      font-size: 14px;
+    }
+
+
+    #xircls_radio input[type=radio],
+    #xircls_radio input[type=checkbox] {
+      /* Hide original#xircls_radio inputs */
+      visibility: hidden !important;
+      position: absolute !important;
+    }
+
+    #xircls_radio input[type=radio]+label:before,
+    #xircls_radio input[type=checkbox]+label:before {
+      height: 16px !important;
+      width: 16px !important;
+      margin-right: 2px !important;
+      content: " ";
+      display: inline-block !important;
+      vertical-align: baseline !important;
+      border: 1px solid #000 !important;
+    }
+
+    #xircls_radio input[type=radio]:checked+label:before,
+    #xircls_radio input[type=checkbox]:checked+label:before {
+      /* background: #000; */
+      box-shadow: inset 0 0 0 4px #000 !important;
+    }
+
+    /* CUSTOM RADIO AND CHECKBOX STYLES */
+    #xircls_radio input[type=radio]+label:before {
+      border-radius: 50% !important;
+    }
+
+    #xircls_radio input[type=checkbox]+label:before {
+      border-radius: 2px !important;
+    }
+
+    #xircls_radio label {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 14px !important;
+      margin-bottom: 8px !important;
+      font-family: Montserrat !important;
+      font-weight: normal !important;
+      color: #464646;
+    }
+
+    .xircls_btn_style {
+      padding: 8px 20px;
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .xircls_btn_style_secondary {
+      padding: 8px 20px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+
+    .xircls_right_menu::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .xircls_right_menu {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    a:not([href]) {
+      cursor: pointer !important;
+    }
+
+    .whistlist_active {
+      color: red !important;
+    }
+
+    .payment-details {
+      font-size: 14px
+    }
+
+    .xircls_add_box p {
+      margin: 0 !important;
+    }
+
+    #add-address-btn {
+        background-color:  #333;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #address-form {
+        display: none;
+    }
+
+    #address-form label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+    }
+
+    #address-form input[type="text"],
+    #address-form input[type="submit"] {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    #address-form input[type="submit"] {
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+
+    #address-form input[type="submit"]:hover {
+        background-color:  #333;
+    }
+    /* #button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+      } */
+      .primary-btn {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff !important;
+        background: #000 !important;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="toastr-container"
+    style="position: fixed; top: 50px; left: 50%; transform: translateX(-50%); z-index: 0;max-width: 90%;">
+    <div class="xircls_toastr"
+      style="display: flex; justify-content: center; align-items: center; padding: 8px 10px; border-radius: 3px; opacity: 0; transition: all 0.9s ease 0s; font-family: sans-serif;gap: 10px;">
+      <span>
+        <i class="fa fa-check" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
+      </span>
+      <p style="color: #fff;margin: 0;padding: 0;font-size: 14px;" id="text_for_toastr"></p>
+    </div>
+
+  </div>
+
+  <div id="MainContent">
+    <div class="xircls_account_parent"
+    style="display: flex; justify-content: space-between; align-items: flex-start; height: 600px; width: 80%; margin: 40px auto; max-height: 100%">
+    <div class="xircls_left_menu" style="width: 27%; border: 1px solid #ccc; border-radius: 10px; padding: 20px 30px; height: 100%">
+      <div class="name_section" style="display: flex;justify-content: center;align-items: center;">
+        <div class="hero_font"
+          style="font-size: 20px; background-color: #ffe595;padding: 10px;border-radius: 50%;width: 100px;height: 100px; display: flex;justify-content: center;align-items: center;font-size: 40px;">
+          Name</div>
+        </div>
+      <div class="ful_name" style="margin-top: 20px;">
+        <div class="main_font" style="text-align: center; font-size: 20px; text-transform: capitalize">Name Last Name</div>
+      </div>
+      <div class="xircls_sections"
+        style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px">
+        <div id="profile_page" class="account_active xircls_box_section" onclick="activeSection('profile_section', 'profile_page')"
+          style="width: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column; flex-basis: 45%; margin-bottom: 15px; padding: 12px 0px; border-radius: 10px; gap: 5px;">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16 15.94"
+            style="width: 20px; display: flex; color: #4b4b4b;">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M16,16h-.78A7.22,7.22,0,1,0,.78,16H0A8,8,0,0,1,7.93,7.93H8a8,8,0,0,1,8,8ZM11.52,3.55A3.52,3.52,0,1,0,8,7.1,3.52,3.52,0,0,0,11.52,3.55Zm-.79,0A2.73,2.73,0,1,1,8,.79,2.73,2.73,0,0,1,10.73,3.55Z"
+              transform="translate(0 -0.06)"></path>
+          </svg>
+          <a id="profile-link" data-template="profile" class="xircls-list">  
+            <div class="nav_items_xircls" style="font-size: 16px;">Profile</div>
+          </a>
+        </div>
+
+        <div id="address_page" class="xircls_box_section" onclick="activeSection('address_section', 'address_page')"
+          style="width: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column; flex-basis: 45%; margin-bottom: 15px; padding: 12px 0px; border-radius: 10px; gap: 5px">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 13.15 15.87"
+            style="width: 20px; display: flex">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M6.6,16,1.9,11.3a6.64,6.64,0,0,1,0-9.4h0a6.73,6.73,0,0,1,9.4.3,6.53,6.53,0,0,1,0,9ZM2.5,2.5a5.73,5.73,0,0,0,0,8.2l4.1,4.1,4.1-4.1a5.73,5.73,0,0,0,0-8.2A5.92,5.92,0,0,0,2.5,2.5ZM6.6,8.7a2,2,0,1,1,2-2A2,2,0,0,1,6.6,8.7Zm0-3.3A1.29,1.29,0,0,0,5.4,6.6,1.16,1.16,0,0,0,6.6,7.8,1.16,1.16,0,0,0,7.8,6.6h0A1.22,1.22,0,0,0,6.6,5.4Z"
+              transform="translate(0.05 -0.13)"></path>
+          </svg>
+          <a id="address-link" data-template="address" class="xircls-list">
+            <div class="nav_items_xircls" style="font-size: 16px;">Address</div>
+          </a>
+        </div>
+
+        <div id="Order_page" class="Order_page xircls_box_section" onclick="activeSection('order_section', 'Order_page')"
+          style="width: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 14.48 16.12"
+            style="width: 20px; display: flex">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M3.86,6.32a.84.84,0,0,1,.42-.73V3a3,3,0,1,1,5.89,0V5.59a.83.83,0,0,1,.43.73.84.84,0,1,1-1.26-.73V3A2.11,2.11,0,1,0,5.13,3V5.59a.84.84,0,0,1-.42,1.57A.86.86,0,0,1,3.86,6.32Zm8.36-3H11v.84h.49L13,12.63H2.19v.84h11l.3,1.69H1L3,4.21h.49V3.37H2.25L0,16H14.48ZM6,4.21H8.5V3.37H6Z"
+              transform="translate(0 0.12)"></path>
+          </svg>
+          <a id="Order-link" data-template="Order" class="xircls-list">
+            <div class="nav_items_xircls" style="font-size: 16px;">Order</div>
+          </a>
+        </div>
+
+        <div id="Wishlist_page" class="xircls_box_section" onclick="activeSection('wishlist_section', 'Wishlist_page')"
+          style="width: 50%;display: flex;justify-content: center;align-items: center;flex-direction: column; flex-basis: 45%; padding: 12px 0px; border-radius: 10px; gap: 5px">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 18.45 16"
+            style="width: 20px; display: flex">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M17.57,2.16A4.72,4.72,0,0,0,13.86,0h0c-2,0-3.77,1.52-4.58,2.36C8.42,1.52,6.67,0,4.65,0H4.6A4.72,4.72,0,0,0,.87,2.18a5.1,5.1,0,0,0,.65,6.48L8.8,15.82a.6.6,0,0,0,.85,0h0l7.27-7.16A5.1,5.1,0,0,0,17.57,2.16Zm-1.5,5.62L9.23,14.52,2.39,7.78A3.84,3.84,0,0,1,1.87,2.9,3.57,3.57,0,0,1,4.61,1.23h0c2.14,0,4.08,2.42,4.1,2.44a.64.64,0,0,0,.9.07l.06-.07s2-2.49,4.13-2.44a3.55,3.55,0,0,1,2.73,1.64A3.85,3.85,0,0,1,16,7.78Z"
+              transform="translate(0)"></path>
+          </svg>
+          <a id="Wishlist-link" data-template="Wishlist" class="xircls-list">
+            <div class="nav_items_xircls" style="font-size: 16px;">Wishlist</div>
+          </a>
+        </div>
+      </div>
+      <div class="xircls_section_two" style="padding: 10px">
+        <div id="recently_page" class="recently xircls_box_section"
+          onclick="activeSection('recently_section', 'recently_page')"
+          style="display: flex;justify-content: flex-start;align-items: center;gap: 15px;margin-bottom: 10px;padding: 8px 10px;border-radius: 7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16.02 16.05"
+            style="width: 20px">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M6.14,8.58a4.81,4.81,0,0,1-3.8-2.25l-.09-.14L2.31,6A4.13,4.13,0,0,1,6.14,3.79,4.37,4.37,0,0,1,10.07,6l.08.17-.1.15A5.17,5.17,0,0,1,6.14,8.58ZM3,6.13A4.11,4.11,0,0,0,6.14,7.92,4.41,4.41,0,0,0,9.39,6.13,3.77,3.77,0,0,0,6.14,4.44,3.49,3.49,0,0,0,3,6.13ZM6.05,7.41A1.24,1.24,0,1,1,7.29,6.17h0A1.25,1.25,0,0,1,6.05,7.41Zm0-1.82a.58.58,0,1,0,.58.58h0A.58.58,0,0,0,6.05,5.59Zm9.82,9.66-5-5a6.05,6.05,0,0,0,1.54-4.06,6.22,6.22,0,1,0-2.16,4.68l5,5a.42.42,0,0,0,.3.12.44.44,0,0,0,.32-.74ZM6.19,11.5a5.32,5.32,0,1,1,5.33-5.32A5.32,5.32,0,0,1,6.19,11.5Z"
+              transform="translate(0.03 0.06)"></path>
+          </svg>
+          <a id="recently-link" data-template="recently" class="xircls-list">
+            <div>Recently Viewed</div>
+          </a>
+        </div>
+
+
+        <div class="reset xircls_box_section"
+          id="reset_page"
+          onclick="activeSection('reset_section', 'reset_page')"
+          style="display: flex;justify-content: flex-start;align-items: center;gap: 15px;margin-bottom: 10px;padding: 8px 10px;border-radius: 7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 15.31 16.02"
+            style="width: 20px">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M13.74,16H1.57A1.57,1.57,0,0,1,0,14.43V8.15A1.57,1.57,0,0,1,1.57,6.58H13.74a1.57,1.57,0,0,1,1.57,1.57v6.28A1.57,1.57,0,0,1,13.74,16ZM1.57,7.36a.78.78,0,0,0-.78.78h0v6.28a.78.78,0,0,0,.78.78H13.74a.78.78,0,0,0,.79-.77h0V8.15a.79.79,0,0,0-.79-.79ZM11,7H4.32V3.4A3.41,3.41,0,0,1,5.47.84,3.23,3.23,0,0,1,8.06,0,3.41,3.41,0,0,1,11,3.47ZM5.11,6.18h5.1V3.47A2.66,2.66,0,0,0,8,.81a2.51,2.51,0,0,0-2,.61,2.65,2.65,0,0,0-.88,2ZM4,12.82a1.31,1.31,0,1,1,.23,0ZM4,11a.52.52,0,0,0-.52.52h0A.53.53,0,0,0,4,12a.52.52,0,0,0,.52-.52h0A.52.52,0,0,0,4,11Zm3.53,1.82a1.31,1.31,0,1,1,1.3-1.32s0,0,0,0a1.31,1.31,0,0,1-1.32,1.3h0Zm0-1.82a.52.52,0,0,0-.52.52H7a.52.52,0,0,0,.52.52h0A.53.53,0,0,0,8,11.52.52.52,0,0,0,7.48,11h0ZM11,12.82a1.31,1.31,0,1,1,.23,0ZM11,11a.52.52,0,0,0-.52.52h0A.53.53,0,0,0,11,12a.52.52,0,0,0,.52-.52h0A.52.52,0,0,0,11,11Z"
+              transform="translate(0 0.02)"></path>
+          </svg>
+          <a id="reset-link" data-template="reset" class="xircls-list">
+            <div>Reset Password</div>
+          </a>
+        </div>
+
+        <div class="logout"
+          style="display: flex;justify-content: flex-start;align-items: center;gap: 15px;margin-bottom: 10px;padding: 8px 10px;border-radius: 7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 16 16"
+            style="width: 20px">
+            <path id="Layer_2" data-name="Layer 2"
+              d="M8,16A8,8,0,0,1,0,8,7.94,7.94,0,0,1,2.5,2.2a.45.45,0,0,1,.5,0,.45.45,0,0,1,0,.5A7.27,7.27,0,0,0,2.8,13a7.16,7.16,0,0,0,10.2.2A7.26,7.26,0,0,0,15.2,8a7.11,7.11,0,0,0-2.1-5.1.38.38,0,0,1,0-.6.38.38,0,0,1,.6,0A8.27,8.27,0,0,1,16,8,8,8,0,0,1,8,16Zm.3-8.2V.4C8.3.2,8.2,0,8,0a.43.43,0,0,0-.4.4h0V7.8a.43.43,0,0,0,.4.4H8c.2,0,.3-.2.3-.4Z">
+            </path>
+          </svg>
+          <a id="logout-link" data-template="logout" class="xircls-list">
+            <div>Logout</div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="xircls_right_menu" style="width: 71%; padding: 20px 30px; border: 1px solid #ccc; border-radius: 10px; overflow: auto;height: 100%; ">
+      <div id="profile_section" class="xircls_content_here">
+        <div class="header_font" style="font-size: 26px">
+          Profile
+        </div>
+
+      </div>
+
+      <div id="address_section" class="xircls_content_here" style="display: none">
+        <div class="header_font" style="font-size: 26px">
+            Address
+        </div>
+
+      </div>
+
+      <div id="add_address_section" class="xircls_content_here" style="display: none">
+        <div class="header_font" style="font-size: 26px">
+            Add Address
+        </div>
+
+        <div class="xircls_form"
+          style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+          <div class="parent_form" style="width: 48%; margin-bottom: 20px">
+            <div class="xircls_label">First Name</div>
+            <input class="xircls_inputs" type="text" placeholder="First Name" />
+          </div>
+
+          <div class="parent_form" style="width: 48%; margin-bottom: 20px">
+            <div class="xircls_label">Last Name</div>
+            <input class="xircls_inputs" type="text" placeholder="Last Name" />
+          </div>
+
+          <div class="parent_form" style="width: 48%; margin-bottom: 20px">
+            <div class="xircls_label">Address Line 1</div>
+            <input class="xircls_inputs" type="text" placeholder="Address Line 1" />
+          </div>
+
+          <div class="parent_form" style="width: 48%; margin-bottom: 20px">
+            <div class="xircls_label">Address Line 2</div>
+            <input class="xircls_inputs" type="text" placeholder="Address Line 2" />
+          </div>
+
+          <div class="parent_form" style="width: 32%; margin-bottom: 20px">
+            <div class="xircls_label">Company</div>
+            <input class="xircls_inputs" type="text" placeholder="Company" />
+          </div>
+
+          <div class="parent_form" style="width: 32%; margin-bottom: 20px">
+            <div class="xircls_label">Postal/Zip Code</div>
+            <input class="xircls_inputs" type="text" placeholder="Postal/Zip Code" />
+          </div>
+
+          <div class="parent_form" style="width: 32%; margin-bottom: 20px">
+            <div class="xircls_label">Contact Number</div>
+            <input class="xircls_inputs" type="text" placeholder="Contact Number" />
+          </div>
+
+          <div class="parent_form" style="width: 32%; margin-bottom: 20px">
+            <div class="xircls_label">City</div>
+            <input class="xircls_inputs" type="text" placeholder="City" />
+          </div>
+
+          <div class="parent_form" style="width: 32%; margin-bottom: 20px">
+            <div class="xircls_label">Country</div>
+            <input class="xircls_inputs" type="text" placeholder="Country" />
+          </div>
+
+          <div class="parent_form" style="width: 32%; margin-bottom: 20px">
+            <div class="xircls_label">Province</div>
+            <input class="xircls_inputs" type="text" placeholder="Province" />
+          </div>
+
+        </div>
+
+        <div class="action" style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center">
+          <div class="xircls_btn_style_secondary" onclick="activeSection('address_section', 'address_page')">
+            Back
+          </div>
+          <div class="xircls_btn_style">
+            Save
+          </div>
+        </div>
+
+      </div>
+
+      <div id="order_section" class="xircls_content_here" style="display: none">
+        <div class="header_font" style="font-size: 26px">
+            My Orders
+        </div>
+        
+
+      </div>
+
+      <div id="wishlist_section" class="xircls_content_here" style="display: none">
+        <div class="header_font" style="font-size: 26px">
+            Wishlist
+        </div>
+
+        <div class="xircls_section xircls_wishlist_section_div" style="width: 100%; display: flex; justify-content: flex-start; gap: 30px; align-items: center; margin-top: 30px; flex-wrap: wrap;">
+          
+        </div>
+            
+      </div>
+
+      <div id="recently_section" class="xircls_content_here" style="display: none">
+        <div class="header_font" style="font-size: 26px">
+          Recently Viewed
+        </div>
+            
+        <div class="xircls_section xircls_recently_section_div" style="width: 100%; display: flex; justify-content: flex-start; gap: 30px; align-items: center; margin-top: 30px; flex-wrap: wrap;">
+          
+        </div>
+
+      </div>
+
+      <div id="reset_section" class="xircls_content_here" style="display: none">
+        <div class="header_font" style="font-size: 26px">
+          Reset Password
+        </div>
+          
+
+
+      </div>
+
+      
+
+    </div>
+  </div>
+  </div>
+
+</body>
+
+<script>
+
+  var list = []
+  console.log(list, "list1")
+
+  console.log("Update 2")
+  var current_url = window.location.href; //  clearing and adding new innerHTML in  MainContent("ID hai...")
+    
+
+
+  function activeSection(section, activeBox) {
+    console.log(section, activeBox)
+    var box_list = document.querySelectorAll('.xircls_content_here')
+    var box_section = document.querySelectorAll('.xircls_box_section')
+    console.log(box_list)
+    console.log(box_section)
+
+    box_list.forEach((cur) => {
+      cur.style.display = "none"
+    })
+
+    box_section.forEach((cur) => {
+      cur.classList.remove('account_active')
+    })
+
+    document.querySelector(`#${section}`).style.display = ''
+    document.querySelector(`#${activeBox}`).classList.add('account_active')
+
+    if (section === "wishlist_section") {
+      appendWishlist()
+    } else if (section === "recently_section") {
+      appendRecently()
+    }
+
+  }
+
+
+</script>
+
+
+
+</html>
