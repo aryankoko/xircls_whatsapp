@@ -509,11 +509,11 @@ export default function TemplateUI() {
                                     return (
 
                                        <Col lg="6"  >
-                                          <Card className="border-0 p-1 rounded-2   position-relaive  shadow-lg " style={{ background: "#c2c2c2", gap: "5px", maxWidth: "500px" }} >
+                                          <Card className="border p-1 rounded-2   position-relaive  shadow-lg " style={{ background: "#fff", gap: "5px", maxWidth: "500px" }} >
 
-                                             <CardBody className="border-0 p-2  pe-5" style={{ backgroundImage: `url(${wp_back})`, gap: "5px", height:"400px", overflowY:"auto", scrollbarWidth:"0" }}>
+                                             <CardBody className="border-0 p-2  pe-5 hideScroll rounded-2 " style={{ backgroundImage: `url(${wp_back})`, gap: "5px", height:"400px", overflowY:"auto", scrollbarWidth:"0" }}>
 
-                                                <div className="border-1 rounded-3 mb-0 whatsapp_template_card" >
+                                                <div className="border-1 rounded-2 mb-0 whatsapp_template_card" >
                                                    <div className='p-0' >
                                                       {
 
